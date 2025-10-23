@@ -30,40 +30,140 @@ eslint.config.js file into place:
 cp eslint-config/eslint.example.js eslint.config.js
 ```
 
-### 3. Adjust workspace configurations
-
-Modify example workspace configurations in eslint.config.js to match the actual project layout.
-
-### 4. Install dependencies
+### 3. Install dependencies
 
 In the root of the project, run:
 
 ```bash
-npm i -D \
-    # Core dependencies
-    eslint \
-    @eslint/js \
-    globals \
-    jsdom \
-    # Stylistic rules
-    @stylistic/eslint-plugin \
-    # Enables import linting (including import order)
-    eslint-plugin-import \
-    # Resolves import aliases for eslint-plugin-import
-    eslint-import-resolver-alias \
-    # Enables JSDoc support
-    eslint-plugin-jsdoc \
-    # Enables TypeScript support
-    @typescript-eslint/eslint-plugin \
-    @typescript-eslint/parser \
-    eslint-import-resolver-typescript \
-    # Enables linting of test files (vitest)
-    @vitest/eslint-plugin \
-    # Enables linting of *.vue files
-    eslint-plugin-vue \
-    # Enables interoperability with Prettier
-    eslint-plugin-prettier \
-    @vue/eslint-config-prettier
+# Core dependencies
+npm i -D eslint @eslint/js globals jsdom
+# Coding style linting
+npm i -D @stylistic/eslint-plugin
+# Import linting (including import order)
+npm i -D eslint-plugin-import
+# Resolves import aliases/paths in tsconfig.json
+npm i -D eslint-import-resolver-alias eslint-import-resolver-typescript
+# JSDoc linting
+npm i -D eslint-plugin-jsdoc
+# TypeScript linting/parser
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
+# Vitest linting
+npm i -D @vitest/eslint-plugin
+# Vue linting
+npm i -D eslint-plugin-vue
+# Prettier interoperability with Vue support
+npm i -D eslint-plugin-prettier @vue/eslint-config-prettier
+```
+
+### 4. Adjust workspace configurations
+
+Modify example workspace configurations in eslint.config.js to match the actual project layout.
+
+Ensure that any import aliases listed in tsconfig.json under compilerOptions.paths are also listed
+in eslint.config.js in the corresponding workspace configuration. For example:
+
+**If paths in `./packages/frontend/tsconfig.json` contains:**
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "paths": {
+      "#config/*": ["src/config/*"],
+      "#fields": ["src/layouts/index.ts"],
+      ... additional aliases as needed ...
+    }
+  },
+  ...
+}
+```
+
+**Then the workspace in `./eslint.config.js` should be similar to:**
+
+```json
+  {
+    ...
+    files: ["packages/frontend/**"],
+    settings: {
+      "import/resolver": {
+        ...
+        alias: {
+          map: [
+            ["#config/*", "./packages/shared/src/config/*"],
+            ["#fields", "./packages/shared/src/fields/index.js"],
+            ... additional aliases as needed ...
+          ],
+        },
+      },
+    },
+  }
+```
+
+
+### 5. Configure tsconfig.json
+
+#### Frontend (Vue) tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["vite/client"],
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      ... import aliases as needed ...
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist"]
+}
+
+```
+
+
+#### Backend/shared (Node) tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["node"],
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      ... import aliases as needed ...
+    }
+  },
+  "include": ["server.*", "src/**/*"],
+  "exclude": ["dist"]
+}
 ```
 
 ## ESLint Rules
