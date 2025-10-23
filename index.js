@@ -1,12 +1,12 @@
 /** @file Main entry point for shared ESLint configurations. */
 
-import baseConfig from "./base.js"
-import javaScriptConfig from "./javascript.js"
-import jsdocConfig from "./jsdoc.js"
-import overrideConfigs from "./overrides.js"
-import { pluginConfigs } from "./plugins.js"
-import typeScriptConfig from "./typescript.js"
-import vueConfig from "./vue.js"
+import baseConfig from "./200_base.js"
+import javaScriptConfig from "./420_javascript.js"
+import jsdocConfig from "./300_jsdoc.js"
+import overrideConfigs from "./999_overrides.js"
+import { pluginConfigs } from "./100_plugins.js"
+import typeScriptConfig from "./400_typescript.js"
+import vueConfig from "./410_vue.js"
 
 /**
  * Builds a complete ESLint configuration by combining shared configs with project-specific workspace configs.

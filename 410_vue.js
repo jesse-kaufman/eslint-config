@@ -4,7 +4,7 @@ import tseslint from "@typescript-eslint/eslint-plugin"
 import tsParser from "@typescript-eslint/parser"
 import vue from "eslint-plugin-vue"
 import vueParser from "vue-eslint-parser"
-import { sharedTypeScriptRules } from "./typescript.js"
+import { sharedTypeScriptRules } from "./400_typescript.js"
 
 // Get project root directory (parent of eslint directory)
 const projectRoot = path.dirname(import.meta.dirname)
