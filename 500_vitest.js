@@ -59,7 +59,7 @@ const vitestConfigs = [
       "vitest/valid-expect": ["warn"],
       "vitest/valid-expect-in-promise": ["warn"],
       "vitest/require-hook": ["warn"],
-    }
+    },
   },
 
   // ============================================
