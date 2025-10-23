@@ -1,6 +1,6 @@
 /** @file TypeScript-specific ESLint configuration with type-checking. */
 import path from "node:path"
-import { tseslint, tsParser } from "./plugins.js"
+import { tseslint, tsParser } from "./100_plugins.js"
 
 // Get project root directory (parent of eslint directory)
 const projectRoot = path.dirname(import.meta.dirname)
