@@ -5,7 +5,9 @@
 Most people should use the command under "Install as read-only submodule". If you have access to
 write to this repository, use the command under "Install as editable submodule".
 
-### Install as read-only submodule
+### 1. Install submodule
+
+#### Install as read-only submodule
 
 To add this repo as a read-only submodule, run the following from your project root:
 
@@ -13,19 +15,55 @@ To add this repo as a read-only submodule, run the following from your project r
 git submodule add https://github.com/jesse-kaufman/eslint-config.git eslint-config
 ```
 
-### Install as editable submodule
+#### Install as editable submodule
 
 ```bash
 git submodule add git@github.com:jesse-kaufman/eslint-config.git eslint-config
 ```
 
-### Copy main config into place
+### 2. Copy main config into place
 
 Once the submodule has been added, run the following (from your project root) to copy the main
 eslint.config.js file into place:
 
 ```bash
 cp eslint-config/eslint.example.js eslint.config.js
+```
+
+### 3. Adjust workspace configurations
+
+Modify example workspace configurations in eslint.config.js to match the actual project layout.
+
+### 4. Install dependencies
+
+In the root of the project, run:
+
+```bash
+npm i -D \
+    # Core dependencies
+    eslint \
+    @eslint/js \
+    globals \
+    jsdom \
+    # Stylistic rules
+    @stylistic/eslint-plugin \
+    # Enables import linting (including import order)
+    eslint-plugin-import \
+    # Resolves import aliases for eslint-plugin-import
+    eslint-import-resolver-alias \
+    # Enables JSDoc support
+    eslint-plugin-jsdoc \
+    # Enables TypeScript support
+    @typescript-eslint/eslint-plugin \
+    @typescript-eslint/parser \
+    eslint-import-resolver-typescript \
+    # Enables linting of test files (vitest)
+    @vitest/eslint-plugin \
+    # Enables linting of *.vue files
+    eslint-plugin-vue \
+    # Enables interoperability with Prettier
+    eslint-plugin-prettier \
+    @vue/eslint-config-prettier
 ```
 
 ## ESLint Rules
@@ -70,8 +108,8 @@ cp eslint-config/eslint.example.js eslint.config.js
         - **Component Best Practices:**
             - _Enforces use of Component API with `<script setup>`_
             - _Enforces consistent ordering of SFC sections_
-            - _Enforces consistent ordering of macros_ (`defineOptions`, `defineEmits`, `defineModel`,
-              `defineProps`)
+            - _Enforces consistent ordering of macros_
+                - _`defineOptions`, `defineEmits`, `defineModel`, `defineProps`_
             - _Enforces consistent component names / filenames_
             - _Warns about undefined props and components_
             - _Warns about unused props, refs, and emit declarations_
