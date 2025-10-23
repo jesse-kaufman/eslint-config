@@ -10,10 +10,10 @@ import { sharedTypeScriptRules } from "./400_typescript.js"
 const projectRoot = path.dirname(import.meta.dirname)
 
 const vueConfig = [
-  // Vue recommended configurations (must come before custom config)
+  // recommended configurations (must come before custom config)
   ...vue.configs["flat/recommended"],
 
-  // Vue + TypeScript configuration
+  // + TypeScript configuration
   // Uses vue-eslint-parser with TypeScript parser for <script> blocks
   {
     name: "app/vue-typescript-config",
@@ -34,16 +34,35 @@ const vueConfig = [
       vue,
     },
     rules: {
+      // ============================================
+      // TypeScript
+      // ============================================
       // Inherit shared TypeScript rules to avoid duplication
       ...sharedTypeScriptRules,
-
-      // ============================================
-      // Vue Language Features
-      // ============================================
       "vue/block-lang": ["error", { script: { lang: "ts" } }],
 
       // ============================================
-      // Vue Component Structure & Organization
+      // Template Safety
+      // ============================================
+      "vue/no-v-html": "error",
+      "vue/no-v-text": ["error"],
+      "vue/no-template-target-blank": ["error"],
+      "vue/no-this-in-before-route-enter": ["error"],
+      "vue/no-root-v-if": ["error"],
+
+      // ============================================
+      // Template Best Practices
+      // ============================================
+      "vue/next-tick-style": ["warn", "promise"],
+      "vue/no-useless-mustaches": ["warn"],
+      "vue/no-useless-v-bind": ["warn"],
+      "vue/no-negated-v-if-condition": ["warn"],
+      "vue/no-ref-object-reactivity-loss": ["warn"],
+      "vue/prefer-use-template-ref": ["warn"],
+      "vue/prefer-separate-static-class": ["warn"],
+
+      // ============================================
+      // Component Best Practices
       // ============================================
       "vue/define-macros-order": [
         "warn",
@@ -60,32 +79,6 @@ const vueConfig = [
           registeredComponentsOnly: false,
         },
       ],
-
-      // ============================================
-      // Vue Template Safety
-      // ============================================
-      "vue/no-v-html": "error",
-      "vue/no-v-text": ["error"],
-      "vue/no-template-target-blank": ["error"],
-      "vue/no-this-in-before-route-enter": ["error"],
-      "vue/no-root-v-if": ["error"],
-
-      // ============================================
-      // Vue Template Best Practices
-      // ============================================
-      "vue/v-on-event-hyphenation": ["warn", "never", { autofix: true }],
-      "vue/next-tick-style": ["warn", "promise"],
-      "vue/no-useless-mustaches": ["warn"],
-      "vue/no-useless-v-bind": ["warn"],
-      "vue/no-negated-v-if-condition": ["warn"],
-      "vue/no-ref-object-reactivity-loss": ["warn"],
-      "vue/prefer-use-template-ref": ["warn"],
-      "vue/prefer-true-attribute-shorthand": ["warn"],
-      "vue/prefer-separate-static-class": ["warn"],
-
-      // ============================================
-      // Vue Component Validation
-      // ============================================
       "vue/match-component-file-name": [
         "error",
         { extensions: ["vue"], shouldMatchCase: true },
@@ -106,14 +99,16 @@ const vueConfig = [
       "vue/no-import-compiler-macros": ["error"],
 
       // ============================================
-      // Vue Props & Events
+      // Props & Events
       // ============================================
+      "vue/v-on-event-hyphenation": ["warn", "never", { autofix: true }],
       "vue/prop-name-casing": ["error", "camelCase"],
       "vue/prefer-prop-type-boolean-first": ["warn"],
       "vue/custom-event-name-casing": ["warn", "camelCase"],
+      "vue/prefer-true-attribute-shorthand": ["warn"],
 
       // ============================================
-      // Vue Template Formatting
+      // Template Formatting
       // ============================================
       "vue/html-indent": 0,
       "vue/max-attributes-per-line": "off",
@@ -137,14 +132,14 @@ const vueConfig = [
       ],
 
       // ============================================
-      // Vue Style & Static Content
+      // Style & Static Content
       // ============================================
       "vue/enforce-style-attribute": ["error", { allow: ["scoped"] }],
       "vue/no-multiple-objects-in-class": ["warn"],
       "vue/no-static-inline-styles": ["error"],
 
       // ============================================
-      // Vue Template Spacing
+      // Template Spacing
       // ============================================
       "vue/padding-line-between-blocks": ["warn"],
       "vue/padding-line-between-tags": [
@@ -155,31 +150,42 @@ const vueConfig = [
           { blankLine: "always", prev: "tbody", next: "tfoot" },
         ],
       ],
-
-      // ============================================
-      // Vue Async Operations
-      // ============================================
-      "vue/no-restricted-call-after-await": ["warn"],
     },
   },
 
-  // Frontend-specific Vue overrides
+  // ============================================
+  // JSDoc
+  // ============================================
   {
-    name: "app/frontend-vue-overrides",
-    files: ["packages/frontend/**/*.{js,ts,vue}"],
-    rules: {
-      // These rules are specifically for the frontend package
-      // They were in the original config but seem frontend-specific
-    },
-  },
-
-  // General Vue file overrides
-  {
-    name: "app/vue-overrides",
+    name: "app/vue-jsdoc-overrides",
     files: ["**/*.vue"],
     rules: {
-      // Vue files don't need file-level JSDoc comments
+      // files don't need file-level JSDoc comments
       "jsdoc/require-file-overview": "off",
+    },
+  },
+
+  // ============================================
+  // Icon Component Overrides
+  // ============================================
+  {
+    name: "app/vue-icon-overrides",
+    files: ["**/*Icon.vue", "**/Icon*.vue"],
+    rules: {
+      // Icon components often have very long SVG path strings
+      "@stylistic/max-len": "off",
+    },
+  },
+
+  // ============================================
+  // Composable Overrides
+  // ============================================
+  {
+    name: "app/composable-overrides",
+    files: ["**/composables/*"],
+    rules: {
+      // Composables often need to be longer than typical functions
+      "max-lines-per-function": "off",
     },
   },
 ]
