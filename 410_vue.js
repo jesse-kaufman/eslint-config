@@ -10,7 +10,7 @@ import { sharedTypeScriptRules } from "./400_typescript.js"
 const projectRoot = path.dirname(import.meta.dirname)
 
 const vueConfig = [
-  // recommended configurations (must come before custom config)
+  // Recommended configurations (must come before custom config)
   ...vue.configs["flat/recommended"],
 
   // + TypeScript configuration
@@ -160,7 +160,7 @@ const vueConfig = [
     name: "app/vue-jsdoc-overrides",
     files: ["**/*.vue"],
     rules: {
-      // files don't need file-level JSDoc comments
+      // Files don't need file-level JSDoc comments
       "jsdoc/require-file-overview": "off",
     },
   },
