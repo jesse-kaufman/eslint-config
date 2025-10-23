@@ -6,7 +6,12 @@ const overrideConfigs = [
   // ============================================
   {
     name: "app/tooling-config-overrides",
-    files: ["**/*.config.js", "eslint/**/*.js"],
+    files: [
+      "eslint.config.js",
+      "eslint-config/*",
+      "**/*.config.js",
+      "eslint/**/*.js",
+    ],
     rules: {
       // Config files can be long and have magic numbers
       "max-lines": "off",
@@ -21,11 +26,30 @@ const overrideConfigs = [
   },
 
   // ============================================
+  // ESLint Example File Overrides
+  // ============================================
+  {
+    name: "app/eslint-example-overrides",
+    files: ["eslint-config/eslint.example.js"],
+    rules: {
+      "import/no-unresolved": [
+        "error",
+        {
+          ignore: ["./eslint-config/index.js"],
+        },
+      ],
+    },
+  },
+
+  // ============================================
   // Config Directory Overrides
   // ============================================
   {
     name: "app/config-dir-overrides",
-    files: ["**/packages/*/config/*.{js,ts}", "**/packages/*/config/**/*.{js,ts}"],
+    files: [
+      "**/packages/**/src/config/*.{js,ts}",
+      "**/packages/**/src/config/**/*.{js,ts}",
+    ],
     rules: {
       // Config files often contain magic numbers for configuration values
       "no-magic-numbers": "off",
