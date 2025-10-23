@@ -7,6 +7,7 @@ import overrideConfigs from "./999_overrides.js"
 import { pluginConfigs } from "./100_plugins.js"
 import typeScriptConfig from "./400_typescript.js"
 import vueConfig from "./410_vue.js"
+import vitestConfigs from "./500_vitest.js"
 
 /**
  * Builds a complete ESLint configuration by combining shared configs with project-specific workspace configs.
@@ -35,6 +36,7 @@ function buildConfig(workspaces = []) {
     ...typeScriptConfig, // TypeScript files (.ts)
     ...vueConfig, // Vue files (.vue) with TypeScript
     ...javaScriptConfig, // Legacy JavaScript files (.js)
+    ...vitestConfigs, // Vitest configuration / test files
 
     // 5. Workspace-specific configurations (provided by project)
     ...workspaces,
