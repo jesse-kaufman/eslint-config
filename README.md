@@ -99,7 +99,6 @@ in eslint.config.js in the corresponding workspace configuration. For example:
   }
 ```
 
-
 ### 5. Configure tsconfig.json
 
 #### Frontend (Vue) tsconfig.json
@@ -133,7 +132,6 @@ in eslint.config.js in the corresponding workspace configuration. For example:
 }
 
 ```
-
 
 #### Backend/shared (Node) tsconfig.json
 
