@@ -182,10 +182,11 @@ const vueConfig = [
   // ============================================
   {
     name: "app/composable-overrides",
-    files: ["**/composables/*"],
+    files: ["**/composables/*", "**/stores/*"],
     rules: {
-      // Composables often need to be longer than typical functions
+      // Composables/stores often need to be longer than typical functions
       "max-lines-per-function": "off",
+      "max-statements": "off",
     },
   },
 ]
