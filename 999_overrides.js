@@ -16,6 +16,7 @@ const overrideConfigs = [
       // Config files can be long and have magic numbers
       "max-lines": "off",
       "no-magic-numbers": "off",
+      "@typescript-eslint/no-magic-numbers": "off",
       "import/no-unresolved": [
         "error",
         {
@@ -53,6 +54,7 @@ const overrideConfigs = [
     rules: {
       // Config files often contain magic numbers for configuration values
       "no-magic-numbers": "off",
+      "@typescript-eslint/no-magic-numbers": "off",
     },
   },
 ]
