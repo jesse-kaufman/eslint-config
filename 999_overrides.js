@@ -7,10 +7,10 @@ const overrideConfigs = [
   {
     name: "app/tooling-config-overrides",
     files: [
-      "eslint.config.js",
+      "eslint.config.{js,ts}",
       "eslint-config/*",
-      "**/*.config.js",
-      "eslint/**/*.js",
+      "**/*.config.{js,ts}",
+      "eslint/**/*.{js,ts}",
     ],
     rules: {
       // Config files can be long and have magic numbers
