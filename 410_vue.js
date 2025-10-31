@@ -178,10 +178,10 @@ const vueConfig = [
   },
 
   // ============================================
-  // Composable Overrides
+  // Composable/Store Overrides
   // ============================================
   {
-    name: "app/composable-overrides",
+    name: "app/composable-and-store-overrides",
     files: ["**/composables/*", "**/stores/*"],
     rules: {
       // Composables/stores often need to be longer than typical functions
