@@ -60,7 +60,10 @@ const jsdocConfig = [
       "jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
       "jsdoc/require-asterisk-prefix": "warn",
       "jsdoc/require-description": "warn",
-      "jsdoc/require-description-complete-sentence": ["warn"],
+      "jsdoc/require-description-complete-sentence": [
+        "warn",
+        { abbreviations: ["etc.", "e.g.", "i.e."] },
+      ],
       "jsdoc/require-file-overview": ["warn"],
       "jsdoc/require-hyphen-before-param-description": "warn",
       "jsdoc/require-jsdoc": [
