@@ -312,7 +312,7 @@ const typeScriptConfig = [
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: ["./packages/*/tsconfig.json", "./scripts/tsconfig.json"],
+        projectService: true,
         tsconfigRootDir: projectRoot,
       },
     },

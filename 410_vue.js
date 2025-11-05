@@ -25,7 +25,7 @@ const vueConfig = [
         ecmaVersion: "latest",
         sourceType: "module",
         extraFileExtensions: [".vue"],
-        project: ["./packages/*/tsconfig.json", "./scripts/tsconfig.json"],
+        projectService: true,
         tsconfigRootDir: projectRoot,
       },
     },
