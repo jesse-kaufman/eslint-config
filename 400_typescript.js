@@ -21,7 +21,6 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/no-inferrable-types": "warn",
   "@typescript-eslint/no-unnecessary-type-assertion": "warn",
   "@typescript-eslint/no-unnecessary-type-arguments": "warn",
-  "@typescript-eslint/no-unnecessary-type-constraint": "warn",
 
   // ============================================
   // Type Safety
@@ -40,8 +39,6 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/no-import-type-side-effects": "error",
   "@typescript-eslint/no-for-in-array": "warn",
   "@typescript-eslint/prefer-for-of": "warn",
-  "@typescript-eslint/no-namespace": "error",
-  "@typescript-eslint/no-require-imports": "error",
 
   // ============================================
   // Type Definition Consistency
@@ -54,10 +51,7 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/consistent-indexed-object-style": ["error", "record"],
   "@typescript-eslint/consistent-type-assertions": "error",
   "@typescript-eslint/consistent-type-definitions": "error",
-  "@typescript-eslint/no-empty-object-type": "error",
   "@typescript-eslint/no-duplicate-type-constituents": "error",
-  "@typescript-eslint/no-duplicate-enum-values": "error",
-  "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
   "@typescript-eslint/no-redundant-type-constituents": "error",
 
   // ============================================
@@ -67,8 +61,6 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/no-shadow": "error",
   "init-declarations": "off",
   "@typescript-eslint/init-declarations": "error",
-  "no-array-constructor": "off",
-  "@typescript-eslint/no-array-constructor": "error",
   "no-loop-func": "off",
   "@typescript-eslint/no-loop-func": "error",
   "no-magic-numbers": "off",
@@ -92,8 +84,6 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/dot-notation": "error",
   "no-implied-eval": "off",
   "@typescript-eslint/no-implied-eval": "error",
-  "no-unused-vars": "off",
-  "@typescript-eslint/no-unused-vars": "warn",
   "@typescript-eslint/consistent-type-exports": "error",
   "@typescript-eslint/consistent-type-imports": [
     "warn",
@@ -104,11 +94,9 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/no-array-delete": "error",
   "@typescript-eslint/method-signature-style": ["error", "method"],
   "@typescript-eslint/no-confusing-non-null-assertion": "error",
-  "@typescript-eslint/no-extra-non-null-assertion": "error",
   "@typescript-eslint/no-dynamic-delete": "error",
   "@typescript-eslint/no-extraneous-class": "error",
   "@typescript-eslint/no-floating-promises": "error",
-  "@typescript-eslint/no-misused-new": "error",
   "@typescript-eslint/no-meaningless-void-operator": "error",
   "@typescript-eslint/no-misused-promises": "error",
   "@typescript-eslint/no-misused-spread": "error",
