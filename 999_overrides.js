@@ -20,7 +20,7 @@ const overrideConfigs = [
       "import/no-unresolved": [
         "error",
         {
-          ignore: ["@typescript-eslint/"],
+          ignore: ["@typescript-eslint/", "typescript-eslint"],
         },
       ],
     },
