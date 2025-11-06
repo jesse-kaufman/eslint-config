@@ -1,13 +1,13 @@
 /** @file Plugin imports and recommended configurations for ESLint. */
 import js from "@eslint/js"
 import stylistic from "@stylistic/eslint-plugin"
-import tseslint from "@typescript-eslint/eslint-plugin"
 import tsParser from "@typescript-eslint/parser"
 import skipFormatting from "@vue/eslint-config-prettier/skip-formatting"
 import importPlugin from "eslint-plugin-import"
 import jsdoc from "eslint-plugin-jsdoc"
 import eslintPluginPrettier from "eslint-plugin-prettier"
 import globals from "globals"
+import tseslint from "typescript-eslint"
 
 // Universal plugin recommended configurations
 // These apply to all JavaScript/TypeScript files regardless of context

@@ -8,10 +8,6 @@ const projectRoot = path.dirname(import.meta.dirname)
 // Shared TypeScript rules used by both .ts and .vue files
 // This prevents duplication of rules between typescript and vue configs
 const sharedTypeScriptRules = {
-  // Spread in TypeScript ESLint strict and stylistic type-checked rules
-  ...tseslint.configs.strict.rules,
-  ...tseslint.configs.stylisticTypeChecked,
-
   // Note: JSDoc rules are handled by eslint/jsdoc.js, not here
   // This prevents the TypeScript preset from overwriting custom JSDoc rules
 
@@ -25,8 +21,21 @@ const sharedTypeScriptRules = {
   // ============================================
   // Type Safety
   // ============================================
-  "@typescript-eslint/no-explicit-any": "warn",
-  "@typescript-eslint/no-invalid-void-type": "error",
+  "@typescript-eslint/no-unnecessary-type-conversion": "warn",
+  "@typescript-eslint/no-unsafe-argument": "error",
+  "@typescript-eslint/no-unsafe-call": "error",
+  "@typescript-eslint/no-unsafe-member-access": [
+    "error",
+    { allowOptionalChaining: true },
+  ],
+  "@typescript-eslint/no-confusing-void-expression": [
+    "error",
+    {
+      ignoreArrowShorthand: true,
+      ignoreVoidOperator: true,
+      ignoreVoidReturningFunctions: true,
+    },
+  ],
 
   // ============================================
   // Modern JavaScript/TypeScript Patterns
@@ -93,17 +102,13 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/explicit-function-return-type": ["warn"],
   "@typescript-eslint/no-array-delete": "error",
   "@typescript-eslint/method-signature-style": ["error", "method"],
-  "@typescript-eslint/no-confusing-non-null-assertion": "error",
-  "@typescript-eslint/no-dynamic-delete": "error",
-  "@typescript-eslint/no-extraneous-class": "error",
-  "@typescript-eslint/no-floating-promises": "error",
+  "@typescript-eslint/prefer-regexp-exec": "off",
   "@typescript-eslint/no-meaningless-void-operator": "error",
   "@typescript-eslint/no-misused-promises": "error",
   "@typescript-eslint/no-misused-spread": "error",
   "@typescript-eslint/no-mixed-enums": "error",
-  "@typescript-eslint/no-non-null-assertion": "error",
   "@typescript-eslint/no-unnecessary-condition": "error",
-  "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
+  "@typescript-eslint/no-unnecessary-template-expression": "error",
   "@typescript-eslint/member-ordering": [
     "warn",
     {
@@ -286,6 +291,15 @@ const sharedTypeScriptRules = {
 const typeScriptConfig = [
   // TypeScript configuration with type-checking
   // Applies to all .ts files across the monorepo
+  ...tseslint.configs.strictTypeChecked.map((config) => ({
+    ...config,
+    ignores: ["**/*.js"],
+  })),
+  ...tseslint.configs.stylisticTypeChecked.map((config) => ({
+    ...config,
+    ignores: ["**/*.js"],
+  })),
+
   {
     name: "app/typescript-config",
     files: [
@@ -295,6 +309,8 @@ const typeScriptConfig = [
       "packages/frontend/**/*.ts",
       "packages/config/**/*.ts",
     ],
+    // Spread in TypeScript ESLint strict and stylistic type-checked rules
+
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -305,7 +321,7 @@ const typeScriptConfig = [
       },
     },
     plugins: {
-      "@typescript-eslint": tseslint,
+      "@typescript-eslint": tseslint.plugin,
     },
     rules: sharedTypeScriptRules,
   },
