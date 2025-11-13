@@ -37,7 +37,6 @@ const sharedTypeScriptRules = {
     },
   ],
   "@typescript-eslint/prefer-reduce-type-parameter": "error",
-  //"@typescript-eslint/prefer-readonly-parameter-types": "warn",
 
   // ============================================
   // Modern JavaScript/TypeScript Patterns
@@ -64,6 +63,7 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/consistent-type-definitions": "error",
   "@typescript-eslint/no-duplicate-type-constituents": "error",
   "@typescript-eslint/no-redundant-type-constituents": "error",
+  "@typescript-eslint/prefer-return-this-type": "error",
 
   // ============================================
   // Code Consistency
@@ -78,6 +78,11 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/prefer-promise-reject-errors": "error",
   "no-magic-numbers": "off",
   "@typescript-eslint/prefer-readonly": "warn",
+  "@typescript-eslint/prefer-string-starts-ends-with": "error",
+  "@typescript-eslint/promise-function-async": "error",
+  "@typescript-eslint/switch-exhaustiveness-check": "error",
+  "class-methods-use-this": "off",
+  "@typescript-eslint/class-methods-use-this": "error",
   "@typescript-eslint/no-magic-numbers": [
     "error",
     {
