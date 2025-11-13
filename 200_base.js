@@ -55,12 +55,13 @@ const baseConfig = [
       // ============================================
       // Code Quality & Best Practices
       // ============================================
-      "array-callback-return": "error",
+      "array-callback-return": ["error", { checkForEach: true }],
       "arrow-body-style": [
         "warn",
         "as-needed",
         { requireReturnForObjectLiteral: false },
       ],
+      "no-promise-executor-return": "error",
       complexity: ["warn", { max: 10 }],
       curly: ["error", "multi-line", "consistent"],
       "default-case-last": "error",
