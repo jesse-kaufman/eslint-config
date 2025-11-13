@@ -51,16 +51,25 @@ const baseConfig = [
         "double",
         { avoidEscape: true, allowTemplateLiterals: true },
       ],
+      "prefer-regex-literals": "error",
 
       // ============================================
       // Code Quality & Best Practices
       // ============================================
+      "no-script-url": "error",
       "array-callback-return": ["error", { checkForEach: true }],
       "arrow-body-style": [
         "warn",
         "as-needed",
         { requireReturnForObjectLiteral: false },
       ],
+      "logical-assignment-operators": [
+        "warn",
+        "always",
+        { enforceForIfStatements: true },
+      ],
+      "max-classes-per-file": "error",
+      "symbol-description": "warn",
       "no-promise-executor-return": "error",
       complexity: ["warn", { max: 10 }],
       curly: ["error", "multi-line", "consistent"],
@@ -76,11 +85,14 @@ const baseConfig = [
       "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
       "no-await-in-loop": "error",
       "no-duplicate-imports": "error",
-      "no-else-return": "error",
+      "no-else-return": ["error", { allowElseIf: false }],
       "no-empty-function": "warn",
       "no-extra-label": "error",
+      "no-implied-eval": "error",
+      "no-iterator": "error",
       "no-implicit-coercion": "error",
       "no-inner-declarations": "error",
+      "no-extra-bind": "error",
       "no-invalid-this": "error",
       "no-labels": "error",
       "no-lone-blocks": "error",
@@ -97,14 +109,15 @@ const baseConfig = [
       "no-param-reassign": "error",
       "no-return-assign": "error",
       "no-self-compare": "error",
-      "no-sequences": "error",
+      "no-sequences": ["error", { allowInParentheses: false }],
       "no-shadow": "warn",
       "no-template-curly-in-string": "error",
       "no-undef-init": "error",
       "no-unmodified-loop-condition": "error",
-      "no-unneeded-ternary": "error",
+      "no-unneeded-ternary": ["error", { defaultAssignment: false }],
       "no-unreachable-loop": "error",
       "no-unused-expressions": "warn",
+      "no-useless-computed-key": "error",
       "no-unused-vars": "warn",
       "no-use-before-define": [
         "warn",
@@ -145,14 +158,7 @@ const baseConfig = [
       // Function & Code Organization
       // ============================================
       "func-names": ["error", "as-needed"],
-      "func-style": [
-        "error",
-        "declaration",
-        {
-          allowArrowFunctions: true,
-          overrides: { namedExports: "expression" },
-        },
-      ],
+      "func-style": ["error", "expression"],
       "max-lines": [
         "warn",
         {
@@ -161,6 +167,7 @@ const baseConfig = [
           skipComments: true,
         },
       ],
+      "func-name-matching": "error",
       "max-lines-per-function": ["warn", { max: 40, skipBlankLines: true }],
       "max-params": ["error", 5],
       "max-statements": ["warn", 20],
