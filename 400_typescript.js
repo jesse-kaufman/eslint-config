@@ -36,6 +36,8 @@ const sharedTypeScriptRules = {
       ignoreVoidReturningFunctions: true,
     },
   ],
+  "@typescript-eslint/prefer-reduce-type-parameter": "error",
+  //"@typescript-eslint/prefer-readonly-parameter-types": "warn",
 
   // ============================================
   // Modern JavaScript/TypeScript Patterns
@@ -72,7 +74,10 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/init-declarations": "error",
   "no-loop-func": "off",
   "@typescript-eslint/no-loop-func": "error",
+  "prefer-promise-reject-errors": "off",
+  "@typescript-eslint/prefer-promise-reject-errors": "error",
   "no-magic-numbers": "off",
+  "@typescript-eslint/prefer-readonly": "warn",
   "@typescript-eslint/no-magic-numbers": [
     "error",
     {
