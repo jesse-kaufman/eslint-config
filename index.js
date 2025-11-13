@@ -21,29 +21,27 @@ import overrideConfigs from "./999_overrides.js"
  * const config = buildConfig(workspaces)
  * export default config
  */
-function buildConfig(workspaces = []) {
-  return [
-    // 1. Plugin recommended configurations (must come first)
-    ...pluginConfigs,
+const buildConfig = (workspaces = []) => [
+  // 1. Plugin recommended configurations (must come first)
+  ...pluginConfigs,
 
-    // 2. Base configuration (applies to all files)
-    ...baseConfig,
+  // 2. Base configuration (applies to all files)
+  ...baseConfig,
 
-    // 3. JSDoc configuration (applies to JS/TS files)
-    ...jsdocConfig,
+  // 3. JSDoc configuration (applies to JS/TS files)
+  ...jsdocConfig,
 
-    // 4. Language-specific configurations
-    ...typeScriptConfig, // TypeScript files (.ts)
-    ...vueConfig, // Vue files (.vue) with TypeScript
-    ...javaScriptConfig, // Legacy JavaScript files (.js)
-    ...vitestConfigs, // Vitest configuration / test files
+  // 4. Language-specific configurations
+  ...typeScriptConfig, // TypeScript files (.ts)
+  ...vueConfig, // Vue files (.vue) with TypeScript
+  ...javaScriptConfig, // Legacy JavaScript files (.js)
+  ...vitestConfigs, // Vitest configuration / test files
 
-    // 5. Workspace-specific configurations (provided by project)
-    ...workspaces,
+  // 5. Workspace-specific configurations (provided by project)
+  ...workspaces,
 
-    // 6. Specialized overrides (most specific, should come last)
-    ...overrideConfigs,
-  ]
-}
+  // 6. Specialized overrides (most specific, should come last)
+  ...overrideConfigs,
+]
 
 export default buildConfig
