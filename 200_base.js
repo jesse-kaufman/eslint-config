@@ -192,7 +192,7 @@ const baseConfig = [
         "always",
         {
           avoidQuotes: true,
-          avoidExplicitReturnArrows: true,
+          avoidExplicitReturnArrows: false,
         },
       ],
       "operator-assignment": ["error", "always"],
