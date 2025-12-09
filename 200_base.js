@@ -278,7 +278,7 @@ const baseConfig = [
       "import/prefer-default-export": "warn",
 
       // ============================================
-      // Import Plugin Rules
+      // Unicorn Plugin Rules
       // ============================================
       "unicorn/prevent-abbreviations": "off",
       "unicorn/filename-case": [
