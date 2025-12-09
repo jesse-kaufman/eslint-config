@@ -43,6 +43,17 @@ const overrideConfigs = [
   },
 
   // ============================================
+  // ESLint Config File Overrides
+  // ============================================
+  {
+    name: "app/eslint-config-overrides",
+    files: ["eslint-config/*"],
+    rules: {
+      "unicorn/filename-case": "off",
+    },
+  },
+
+  // ============================================
   // Config Directory Overrides
   // ============================================
   {
