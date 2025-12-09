@@ -291,6 +291,8 @@ const baseConfig = [
         },
       ],
       "unicorn/prefer-string-raw": "off",
+      "unicorn/no-null": "off",
+      "unicorn/no-array-reduce": "off",
     },
   },
 ]
