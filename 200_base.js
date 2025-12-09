@@ -300,6 +300,8 @@ const baseConfig = [
       "unicorn/custom-error-definition": "error",
       "unicorn/prefer-import-meta-properties": "error",
       "unicorn/better-regex": "warn",
+      "unicorn/no-unused-properties": "warn",
+      "unicorn/prefer-json-parse-buffer": "warn",
     },
   },
 ]
