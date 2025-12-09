@@ -1,12 +1,9 @@
 /** @file Plugin imports and recommended configurations for ESLint. */
 import js from "@eslint/js"
-import stylistic from "@stylistic/eslint-plugin"
 import skipFormatting from "@vue/eslint-config-prettier/skip-formatting"
 import importPlugin from "eslint-plugin-import"
 import jsdoc from "eslint-plugin-jsdoc"
-import eslintPluginPrettier from "eslint-plugin-prettier"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
-import globals from "globals"
 import tseslint from "typescript-eslint"
 
 const tsParser = tseslint.parser
@@ -16,19 +13,16 @@ const tsParser = tseslint.parser
 const pluginConfigs = [
   js.configs.recommended, // Core JavaScript rules
   importPlugin.flatConfigs.recommended, // Import/export rules for all files
-  eslintPluginUnicorn.configs.unopinionated,
+  eslintPluginUnicorn.configs.recommended,
   skipFormatting, // Prettier conflict prevention
   {
     plugins: { jsdoc },
   },
 ]
 
-export {
-  eslintPluginPrettier,
-  globals,
-  jsdoc,
-  pluginConfigs,
-  stylistic,
-  tseslint,
-  tsParser,
-}
+export { pluginConfigs, tsParser }
+export { default as eslintPluginPrettier } from "eslint-plugin-prettier"
+export { default as stylistic } from "@stylistic/eslint-plugin"
+export { default as globals } from "globals"
+export { default as tseslint } from "typescript-eslint"
+export { default as jsdoc } from "eslint-plugin-jsdoc"
