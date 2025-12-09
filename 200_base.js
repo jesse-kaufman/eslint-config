@@ -276,6 +276,21 @@ const baseConfig = [
         },
       ],
       "import/prefer-default-export": "warn",
+
+      // ============================================
+      // Import Plugin Rules
+      // ============================================
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/filename-case": [
+        "error",
+        {
+          cases: {
+            camelCase: true,
+            pascalCase: true,
+          },
+        },
+      ],
+      "unicorn/prefer-string-raw": "off",
     },
   },
 ]
