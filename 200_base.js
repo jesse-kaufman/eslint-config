@@ -296,6 +296,10 @@ const baseConfig = [
       "unicorn/catch-error-name": ["error", { name: "err" }],
       "unicorn/switch-case-braces": ["error", "avoid"],
       "unicorn/explicit-length-check": "off",
+      "unicorn/consistent-destructuring": "error",
+      "unicorn/custom-error-definition": "error",
+      "unicorn/prefer-import-meta-properties": "error",
+      "unicorn/better-regex": "warn",
     },
   },
 ]
