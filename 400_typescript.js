@@ -312,13 +312,7 @@ const typeScriptConfig = [
 
   {
     name: "app/typescript-config",
-    files: [
-      "scripts/*.ts",
-      "packages/backend/**/*.ts",
-      "packages/shared/**/*.ts",
-      "packages/frontend/**/*.ts",
-      "packages/config/**/*.ts",
-    ],
+    files: ["*.ts", "**/*.ts"],
     // Spread in TypeScript ESLint strict and stylistic type-checked rules
 
     languageOptions: {
