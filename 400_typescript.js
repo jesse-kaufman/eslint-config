@@ -37,6 +37,10 @@ const sharedTypeScriptRules = {
     },
   ],
   "@typescript-eslint/prefer-reduce-type-parameter": "error",
+  "@typescript-eslint/restrict-template-expressions": [
+    "warn",
+    { allowNumber: true, allowBoolean: true },
+  ],
 
   // ============================================
   // Modern JavaScript/TypeScript Patterns
