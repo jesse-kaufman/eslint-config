@@ -58,10 +58,7 @@ const overrideConfigs = [
   // ============================================
   {
     name: "app/config-dir-overrides",
-    files: [
-      "**/packages/**/src/config/*.{js,ts}",
-      "**/packages/**/src/config/**/*.{js,ts}",
-    ],
+    files: ["**/src/config/*.{js,ts}", "**/src/config/**/*.{js,ts}"],
     rules: {
       // Config files often contain magic numbers for configuration values
       "no-magic-numbers": "off",
