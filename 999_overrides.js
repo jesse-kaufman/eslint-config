@@ -63,6 +63,7 @@ const overrideConfigs = [
       // Config files often contain magic numbers for configuration values
       "no-magic-numbers": "off",
       "@typescript-eslint/no-magic-numbers": "off",
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
     },
   },
 ]
