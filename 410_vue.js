@@ -49,6 +49,7 @@ const vueConfig = [
       "vue/no-template-target-blank": ["error"],
       "vue/no-this-in-before-route-enter": ["error"],
       "vue/no-root-v-if": ["error"],
+      "@typescript-eslint/no-useless-default-assignment": "off",
 
       // ============================================
       // Template Best Practices
