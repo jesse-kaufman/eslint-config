@@ -106,6 +106,7 @@ const jsdocConfig = [
         "warn",
         {
           tagSequence: [
+            { tags: ["example"] },
             { tags: ["callback"] },
             { tags: ["since", "access"] },
             { tags: ["class", "augments", "mixes"] },
