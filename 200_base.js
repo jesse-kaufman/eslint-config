@@ -82,7 +82,13 @@ const baseConfig = [
       "init-declarations": ["error", "always"],
       "max-depth": "error",
       "max-nested-callbacks": ["error", 5],
-      "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
+      "new-cap": [
+        "error",
+        {
+          capIsNewExceptions: ["Router"],
+          properties: false,
+        },
+      ],
       "no-await-in-loop": "error",
       "no-duplicate-imports": "error",
       "no-else-return": ["error", { allowElseIf: false }],
