@@ -11,8 +11,6 @@ import overrideConfigs from "./999_overrides.js"
 
 /**
  * Builds a complete ESLint configuration by combining shared configs with project-specific workspace configs.
- * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers, etc.).
- * @returns {Array} Complete ESLint configuration array.
  * @example
  * const workspaces = [
  *   { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
@@ -20,6 +18,8 @@ import overrideConfigs from "./999_overrides.js"
  * ]
  * const config = buildConfig(workspaces)
  * export default config
+ * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers, etc.).
+ * @returns {Array} Complete ESLint configuration array.
  */
 const buildConfig = (workspaces = []) => [
   // 1. Plugin recommended configurations (must come first)
