@@ -35,7 +35,7 @@ const baseConfig = [
       "@stylistic/max-len": [
         "warn",
         {
-          code: 120,
+          code: 110,
           comments: 120,
           ignoreUrls: true,
           ignoreTemplateLiterals: true,
