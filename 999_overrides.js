@@ -9,8 +9,10 @@ const overrideConfigs = [
     files: [
       "eslint.config.{js,ts}",
       "eslint-config/*",
+      ".eslint-config/*",
       "**/*.config.{js,ts}",
       "eslint/**/*.{js,ts}",
+      ".eslint/**/*.{js,ts}",
     ],
     rules: {
       // Config files can be long and have magic numbers
@@ -31,12 +33,12 @@ const overrideConfigs = [
   // ============================================
   {
     name: "app/eslint-example-overrides",
-    files: ["eslint-config/eslint.example.js"],
+    files: ["eslint-config/eslint.example.js", ".eslint-config/eslint.example.js"],
     rules: {
       "import/no-unresolved": [
         "error",
         {
-          ignore: ["./eslint-config/index.js"],
+          ignore: ["./eslint-config/index.js", "./.eslint-config/index.js"],
         },
       ],
     },
@@ -47,7 +49,7 @@ const overrideConfigs = [
   // ============================================
   {
     name: "app/eslint-config-overrides",
-    files: ["eslint-config/*"],
+    files: ["eslint-config/*", ".eslint-config/*"],
     rules: {
       "unicorn/filename-case": "off",
     },
