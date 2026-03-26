@@ -73,6 +73,7 @@ const vueConfig = [
         },
       ],
       "vue/component-api-style": ["error", ["script-setup"]],
+      "vue/no-required-prop-with-default": "off",
       "vue/component-name-in-template-casing": [
         "warn",
         "PascalCase",
