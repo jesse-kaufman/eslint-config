@@ -33,7 +33,10 @@ const overrideConfigs = [
   // ============================================
   {
     name: "app/eslint-example-overrides",
-    files: ["eslint-config/eslint.example.js", ".eslint-config/eslint.example.js"],
+    files: [
+      "eslint-config/eslint.example.js",
+      ".eslint-config/eslint.example.js",
+    ],
     rules: {
       "import-x/no-unresolved": [
         "error",
