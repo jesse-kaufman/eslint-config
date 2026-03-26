@@ -4,9 +4,6 @@ import skipFormatting from "@vue/eslint-config-prettier/skip-formatting"
 import { flatConfigs } from "eslint-plugin-import-x"
 import jsdoc from "eslint-plugin-jsdoc"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
-import tseslint from "typescript-eslint"
-
-const tsParser = tseslint.parser
 
 // Universal plugin recommended configurations
 // These apply to all JavaScript/TypeScript files regardless of context
@@ -21,7 +18,8 @@ const pluginConfigs = [
   },
 ]
 
-export { pluginConfigs, tsParser }
+export { pluginConfigs }
+export { parser as tsParser } from "typescript-eslint"
 export { default as eslintPluginPrettier } from "eslint-plugin-prettier"
 export { default as stylistic } from "@stylistic/eslint-plugin"
 export { default as globals } from "globals"
