@@ -1,5 +1,7 @@
 /** @file Base ESLint configuration with language-agnostic rules. */
-import { eslintPluginPrettier, globals, stylistic } from "./100_plugins.js"
+import stylistic from "@stylistic/eslint-plugin"
+import eslintPluginPrettier from "eslint-plugin-prettier"
+import globals from "globals"
 
 const baseConfig = [
   // Global ignores - files/directories that ESLint should completely ignore

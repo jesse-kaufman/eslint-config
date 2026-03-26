@@ -1,6 +1,5 @@
 /** @file Main entry point for shared ESLint configurations. */
-
-import { pluginConfigs } from "./100_plugins.js"
+import pluginConfigs from "./100_plugins.js"
 import baseConfig from "./200_base.js"
 import jsdocConfig from "./300_jsdoc.js"
 import typeScriptConfig from "./400_typescript.js"

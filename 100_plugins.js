@@ -2,7 +2,7 @@
 import js from "@eslint/js"
 import skipFormatting from "@vue/eslint-config-prettier/skip-formatting"
 import { flatConfigs } from "eslint-plugin-import-x"
-import jsdoc from "eslint-plugin-jsdoc"
+import jsdocPlugin from "eslint-plugin-jsdoc"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
 
 // Universal plugin recommended configurations
@@ -14,14 +14,8 @@ const pluginConfigs = [
   eslintPluginUnicorn.configs.recommended,
   skipFormatting, // Prettier conflict prevention
   {
-    plugins: { jsdoc },
+    plugins: { jsdoc: jsdocPlugin },
   },
 ]
 
-export { pluginConfigs }
-export { parser as tsParser } from "typescript-eslint"
-export { default as eslintPluginPrettier } from "eslint-plugin-prettier"
-export { default as stylistic } from "@stylistic/eslint-plugin"
-export { default as globals } from "globals"
-export { default as tseslint } from "typescript-eslint"
-export { default as jsdoc } from "eslint-plugin-jsdoc"
+export default pluginConfigs

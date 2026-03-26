@@ -1,5 +1,5 @@
 /** @file JSDoc-specific ESLint configuration. */
-import jsdoc from "eslint-plugin-jsdoc"
+import jsdocPlugin from "eslint-plugin-jsdoc"
 
 const jsdocConfig = [
   // JSDoc for JavaScript only
@@ -7,7 +7,7 @@ const jsdocConfig = [
     name: "app/jsdoc-js-config",
     files: ["**/*.js"],
     rules: {
-      ...jsdoc.configs["flat/recommended-typescript-flavor"].rules,
+      ...jsdocPlugin.configs["flat/recommended-typescript-flavor"].rules,
     },
   },
 
@@ -16,7 +16,7 @@ const jsdocConfig = [
     name: "app/jsdoc-typescript-recommended",
     files: ["**/*.ts"],
     rules: {
-      ...jsdoc.configs["flat/recommended-typescript"].rules,
+      ...jsdocPlugin.configs["flat/recommended-typescript"].rules,
       "jsdoc/require-throws-type": "off",
     },
   },

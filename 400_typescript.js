@@ -1,6 +1,10 @@
 /** @file TypeScript-specific ESLint configuration with type-checking. */
 import path from "node:path"
-import { tseslint, tsParser } from "./100_plugins.js"
+import {
+  configs as tsConfigs,
+  parser as tsParser,
+  plugin as tsPlugin,
+} from "typescript-eslint"
 
 // Get project root directory (parent of eslint directory)
 const projectRoot = path.dirname(import.meta.dirname)
@@ -305,11 +309,11 @@ const sharedTypeScriptRules = {
 const typeScriptConfig = [
   // TypeScript configuration with type-checking
   // Applies to all .ts files across the monorepo
-  ...tseslint.configs.strictTypeChecked.map((config) => ({
+  ...tsConfigs.strictTypeChecked.map((config) => ({
     ...config,
     ignores: ["**/*.js"],
   })),
-  ...tseslint.configs.stylisticTypeChecked.map((config) => ({
+  ...tsConfigs.stylisticTypeChecked.map((config) => ({
     ...config,
     ignores: ["**/*.js"],
   })),
@@ -329,7 +333,7 @@ const typeScriptConfig = [
       },
     },
     plugins: {
-      "@typescript-eslint": tseslint.plugin,
+      "@typescript-eslint": tsPlugin,
     },
     rules: sharedTypeScriptRules,
   },
