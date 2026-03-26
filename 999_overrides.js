@@ -19,7 +19,7 @@ const overrideConfigs = [
       "max-lines": "off",
       "no-magic-numbers": "off",
       "@typescript-eslint/no-magic-numbers": "off",
-      "import/no-unresolved": [
+      "import-x/no-unresolved": [
         "error",
         {
           ignore: ["@typescript-eslint/", "typescript-eslint"],
@@ -35,7 +35,7 @@ const overrideConfigs = [
     name: "app/eslint-example-overrides",
     files: ["eslint-config/eslint.example.js", ".eslint-config/eslint.example.js"],
     rules: {
-      "import/no-unresolved": [
+      "import-x/no-unresolved": [
         "error",
         {
           ignore: ["./eslint-config/index.js", "./.eslint-config/index.js"],

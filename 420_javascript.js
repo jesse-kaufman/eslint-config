@@ -14,7 +14,7 @@ const javaScriptConfig = [
     rules: {
       // Require .js extensions for ESM imports in JavaScript files
       // This is needed for Node.js ESM compatibility
-      "import/extensions": [
+      "import-x/extensions": [
         "warn",
         "ignorePackages",
         {

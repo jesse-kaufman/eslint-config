@@ -226,9 +226,9 @@ const baseConfig = [
       // ============================================
       // Import Plugin Rules
       // ============================================
-      "import/enforce-node-protocol-usage": ["warn", "always"],
-      "import/exports-last": "warn",
-      "import/extensions": [
+      //"import-x/enforce-node-protocol-usage": ["warn", "always"],
+      "import-x/exports-last": "warn",
+      "import-x/extensions": [
         "warn",
         "ignorePackages",
         {
@@ -237,10 +237,10 @@ const baseConfig = [
           vue: "always",
         },
       ],
-      "import/first": "warn",
-      "import/newline-after-import": "warn",
-      "import/no-absolute-path": "warn",
-      "import/no-anonymous-default-export": [
+      "import-x/first": "warn",
+      "import-x/newline-after-import": "warn",
+      "import-x/no-absolute-path": "warn",
+      "import-x/no-anonymous-default-export": [
         "error",
         {
           allowArray: false,
@@ -253,10 +253,10 @@ const baseConfig = [
           allowObject: true,
         },
       ],
-      "import/no-cycle": "warn",
-      "import/no-mutable-exports": "warn",
-      "import/no-useless-path-segments": "warn",
-      "import/order": [
+      "import-x/no-cycle": "warn",
+      "import-x/no-mutable-exports": "warn",
+      "import-x/no-useless-path-segments": "warn",
+      "import-x/order": [
         "warn",
         {
           groups: [
@@ -281,7 +281,7 @@ const baseConfig = [
           warnOnUnassignedImports: true,
         },
       ],
-      "import/prefer-default-export": "warn",
+      "import-x/prefer-default-export": "warn",
 
       // ============================================
       // Unicorn Plugin Rules

@@ -82,13 +82,13 @@ const vitestConfigs = [
     files: ["**/vite.config.{js,ts}", "**/vitest.config.{js,ts}"],
     rules: {
       // Vite/Vitest configs often have import issues that should be ignored
-      "import/namespace": "off",
-      "import/default": "off",
-      "import/no-unresolved": "off",
-      "import/no-named-as-default": "off",
-      "import/no-named-as-default-member": "off",
-      "import/no-duplicates": "off",
-      "import/no-cycle": "off",
+      "import-x/namespace": "off",
+      "import-x/default": "off",
+      "import-x/no-unresolved": "off",
+      "import-x/no-named-as-default": "off",
+      "import-x/no-named-as-default-member": "off",
+      "import-x/no-duplicates": "off",
+      "import-x/no-cycle": "off",
     },
   },
 ]
