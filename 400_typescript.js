@@ -15,6 +15,11 @@ const sharedTypeScriptRules = {
   // Note: JSDoc rules are handled by eslint/jsdoc.js, not here
   // This prevents the TypeScript preset from overwriting custom JSDoc rules
 
+  "import-x/no-unresolved": "off",
+  "import-x/namespace": "off",
+  "import-x/default": "off",
+  "no-unused-vars": "off",
+
   // ============================================
   // Type Inference Rules
   // ============================================
