@@ -55,6 +55,7 @@ const overrideConfigs = [
     files: ["eslint-config/*", ".eslint-config/*"],
     rules: {
       "unicorn/filename-case": "off",
+      "import-x/default": "off"
     },
   },
 
