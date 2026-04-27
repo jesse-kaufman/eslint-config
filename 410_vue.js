@@ -79,6 +79,7 @@ const vueConfig = [
         "PascalCase",
         {
           registeredComponentsOnly: false,
+          ignores: ["tableau-viz"],
         },
       ],
       "vue/match-component-file-name": [
@@ -89,7 +90,7 @@ const vueConfig = [
       "vue/no-undef-properties": ["error"],
       "vue/no-undef-components": [
         "error",
-        { ignorePatterns: ["RouterLink", "RouterView"] },
+        { ignorePatterns: ["RouterLink", "RouterView", "tableau-viz"] },
       ],
       "vue/no-unused-properties": ["warn"],
       "vue/no-unused-refs": ["warn"],
