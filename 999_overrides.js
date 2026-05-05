@@ -13,6 +13,7 @@ const overrideConfigs = [
       "**/*.config.{js,ts}",
       "eslint/**/*.{js,ts}",
       ".eslint/**/*.{js,ts}",
+      ".*.js",
     ],
     rules: {
       // Config files can be long and have magic numbers
