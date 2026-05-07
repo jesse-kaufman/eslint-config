@@ -190,8 +190,10 @@ const vueConfig = [
       // Composables/stores often need to be longer than typical functions
       "max-lines-per-function": "off",
       "max-statements": "off",
-      // Vue emit functions are designed to be destructured and don't use `this`
+      // Vue composables/stores are designed to be destructured and don't use `this`
       "@typescript-eslint/unbound-method": "off",
+      // Don't require return type for composables
+      "@typescript-eslint/explicit-function-return-type": "off",
     },
   },
 ]
