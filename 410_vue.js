@@ -173,7 +173,7 @@ const vueConfig = [
   // ============================================
   {
     name: "app/vue-icon-overrides",
-    files: ["**/*Icon.vue", "**/Icon*.vue"],
+    files: ["**/UI/Icons/**/*.vue"],
     rules: {
       // Icon components often have very long SVG path strings
       "@stylistic/max-len": "off",
