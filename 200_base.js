@@ -284,6 +284,7 @@ const baseConfig = [
         },
       ],
       "import-x/prefer-default-export": "warn",
+      "import-x/no-named-as-default-member": "off",
 
       // ============================================
       // Unicorn Plugin Rules
