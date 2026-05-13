@@ -34,6 +34,10 @@ const vueConfig = [
       vue,
     },
     rules: {
+      "max-lines": [
+        "warn",
+        { max: 300, skipBlankLines: true, skipComments: true },
+      ],
       // ============================================
       // TypeScript
       // ============================================
