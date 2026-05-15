@@ -10,9 +10,13 @@ const vitestConfigs = [
     ...pluginVitest.configs.recommended,
     files: ["**/*.test.{js,ts}", "**/__tests__/**"],
     rules: {
-      // Tests often need longer functions and magic numbers for test data
+      // Disable some rules for test files that are not necessary
       "max-lines-per-function": "off",
       "no-magic-numbers": "off",
+      "@typescript-eslint/no-magic-numbers": "off",
+      "jsdoc/require-jsdoc": "off",
+      "jsdoc/require-param": "off",
+      "jsdoc/check-param-names": "off",
 
       // Vitest-specific best practices
       "vitest/consistent-test-it": ["warn"],
