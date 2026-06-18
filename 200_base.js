@@ -297,6 +297,7 @@ const baseConfig = [
             camelCase: true,
             pascalCase: true,
           },
+          checkDirectories: false,
         },
       ],
       "unicorn/prefer-string-raw": "off",
