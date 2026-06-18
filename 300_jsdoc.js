@@ -73,7 +73,7 @@ const jsdocConfig = [
           require: {
             FunctionDeclaration: true,
             FunctionExpression: true,
-            ArrowFunctionExpression: true,
+            ArrowFunctionExpression: false,
             MethodDefinition: true,
             ClassDeclaration: true,
             ClassExpression: true,
