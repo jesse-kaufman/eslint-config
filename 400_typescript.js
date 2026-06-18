@@ -132,6 +132,10 @@ const sharedTypeScriptRules = {
   "@typescript-eslint/no-mixed-enums": "error",
   "@typescript-eslint/no-unnecessary-condition": "error",
   "@typescript-eslint/no-unnecessary-template-expression": "error",
+  "@typescript-eslint/explicit-member-accessibility": [
+    "error",
+    { overrides: { constructors: "no-public" } },
+  ],
   "@typescript-eslint/member-ordering": [
     "warn",
     {
