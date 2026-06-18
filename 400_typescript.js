@@ -122,7 +122,10 @@ const sharedTypeScriptRules = {
     { prefer: "type-imports" },
   ],
   "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-  "@typescript-eslint/explicit-function-return-type": ["warn"],
+  "@typescript-eslint/explicit-function-return-type": [
+    "warn",
+    { allowConciseArrowFunctionExpressionsStartingWithVoid: true },
+  ],
   "@typescript-eslint/no-array-delete": "error",
   "@typescript-eslint/method-signature-style": ["error", "method"],
   "@typescript-eslint/prefer-regexp-exec": "off",
