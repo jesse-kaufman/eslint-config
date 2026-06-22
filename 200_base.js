@@ -54,15 +54,6 @@ const baseConfig = [
         { avoidEscape: true, allowTemplateLiterals: true },
       ],
       "prefer-regex-literals": "error",
-      "unicorn/comment-content": [
-        "warn",
-        {
-          replacements: {
-            ".vue": ".vue",
-            "*.vue": "*.vue",
-          },
-        },
-      ],
 
       // ============================================
       // Code Quality & Best Practices
