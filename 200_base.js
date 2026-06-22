@@ -146,6 +146,8 @@ const baseConfig = [
       "sort-vars": "error",
       "valid-typeof": "error",
       "vars-on-top": "error",
+      "unicorn/prefer-short-arrow-method": "warn",
+      "unicorn/no-unreadable-new-expression": "warn",
 
       // ============================================
       // Naming Conventions
