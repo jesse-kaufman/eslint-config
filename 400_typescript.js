@@ -6,13 +6,13 @@ import {
   plugin as tsPlugin,
 } from "typescript-eslint"
 
-// Get project root directory (parent of eslint directory)
+// Get project root directory (parent of ESLint directory)
 const projectRoot = path.dirname(import.meta.dirname)
 
-// Shared TypeScript rules used by both .ts and .vue files
-// This prevents duplication of rules between typescript and vue configs
+// Shared TypeScript rules used by Vue.js files
+// This prevents duplication of rules between TypeScript and Vue.js configs
 const sharedTypeScriptRules = {
-  // Note: JSDoc rules are handled by eslint/jsdoc.js, not here
+  // Note: JSDoc rules are handled by ESLint/jsdoc.js, not here
   // This prevents the TypeScript preset from overwriting custom JSDoc rules
 
   "import-x/no-unresolved": "off",
@@ -351,6 +351,6 @@ const typeScriptConfig = [
   },
 ]
 
-// Export both the config and the shared rules for use in vue.js
+// Export both the config and the shared rules for use in Vue.js
 export { sharedTypeScriptRules }
 export default typeScriptConfig

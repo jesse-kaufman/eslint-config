@@ -16,7 +16,7 @@ const baseConfig = [
     ],
   },
 
-  // Base configuration for all JavaScript/TypeScript/Vue files
+  // Base configuration for all JavaScript/TypeScript/Vue.js files
   {
     name: "app/base-config",
     files: ["**/*.{js,vue,ts}"],

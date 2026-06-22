@@ -31,9 +31,9 @@ const buildConfig = (workspaces = []) => [
   ...jsdocConfig,
 
   // 4. Language-specific configurations
-  ...typeScriptConfig, // TypeScript files (.ts)
-  ...vueConfig, // Vue files (.vue) with TypeScript
-  ...javaScriptConfig, // Legacy JavaScript files (.js)
+  ...typeScriptConfig, // TypeScript files
+  ...vueConfig, // Vue.js files with TypeScript
+  ...javaScriptConfig, // Legacy JavaScript files
   ...vitestConfigs, // Vitest configuration / test files
 
   // 5. Workspace-specific configurations (provided by project)

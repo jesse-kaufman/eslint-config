@@ -6,7 +6,7 @@ import vue from "eslint-plugin-vue"
 import vueParser from "vue-eslint-parser"
 import { sharedTypeScriptRules } from "./400_typescript.js"
 
-// Get project root directory (parent of eslint directory)
+// Get project root directory (parent of ESLint directory)
 const projectRoot = path.dirname(import.meta.dirname)
 
 const vueConfig = [
@@ -194,7 +194,7 @@ const vueConfig = [
       // Composables/stores often need to be longer than typical functions
       "max-lines-per-function": "off",
       "max-statements": "off",
-      // Vue composables/stores are designed to be destructured and don't use `this`
+      // Vue.js composables/stores are designed to be destructured and don't use `this`
       "@typescript-eslint/unbound-method": "off",
       // Don't require return type for composables
       "@typescript-eslint/explicit-function-return-type": "off",
