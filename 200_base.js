@@ -54,6 +54,10 @@ const baseConfig = [
         { avoidEscape: true, allowTemplateLiterals: true },
       ],
       "prefer-regex-literals": "error",
+      "unicorn/comment-content": "off",
+      "unicorn/no-unreadable-new-expression": "off",
+      "unicorn/prefer-short-arrow-method": "warn",
+      "unicorn/consistent-class-member-order": "off",
 
       // ============================================
       // Code Quality & Best Practices
@@ -146,8 +150,6 @@ const baseConfig = [
       "sort-vars": "error",
       "valid-typeof": "error",
       "vars-on-top": "error",
-      "unicorn/prefer-short-arrow-method": "warn",
-      "unicorn/no-unreadable-new-expression": "warn",
 
       // ============================================
       // Naming Conventions
