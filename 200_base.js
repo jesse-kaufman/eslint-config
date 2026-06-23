@@ -58,6 +58,26 @@ const baseConfig = [
       "unicorn/no-unreadable-new-expression": "off",
       "unicorn/prefer-short-arrow-method": "warn",
       "unicorn/consistent-class-member-order": "off",
+      "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
+      "unicorn/no-return-array-push": "off",
+      "unicorn/consistent-boolean-name": [
+        "warn",
+        {
+          prefixes: {
+            required: true,
+            nullable: true,
+            show: true,
+            hide: true,
+            include: true,
+            use: true,
+            matches: true,
+            allow: true,
+            prevent: true,
+            enable: true,
+            disable: true,
+          },
+        },
+      ],
 
       // ============================================
       // Code Quality & Best Practices
