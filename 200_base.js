@@ -78,6 +78,7 @@ const baseConfig = [
           },
         },
       ],
+      "unicorn/no-await-expression-member": "off",
 
       // ============================================
       // Code Quality & Best Practices
