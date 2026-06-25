@@ -79,6 +79,7 @@ const baseConfig = [
         },
       ],
       "unicorn/no-await-expression-member": "off",
+      "unicorn/prefer-minimal-ternary": "off",
 
       // ============================================
       // Code Quality & Best Practices
