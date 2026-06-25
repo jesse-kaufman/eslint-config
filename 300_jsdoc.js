@@ -96,6 +96,7 @@ const jsdocConfig = [
             "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
 
             // Class stuff
+            "PropertyDefinition > ArrowFunctionExpression",
             "MethodDefinition",
             "ClassDeclaration",
             "ClassExpression",
