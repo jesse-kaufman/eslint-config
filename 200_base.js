@@ -172,6 +172,7 @@ const baseConfig = [
       "sort-vars": "error",
       "valid-typeof": "error",
       "vars-on-top": "error",
+      "unicorn/name-replacements": "off" // Disable for now
 
       // ============================================
       // Naming Conventions
