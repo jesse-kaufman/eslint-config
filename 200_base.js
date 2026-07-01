@@ -80,6 +80,7 @@ const baseConfig = [
       ],
       "unicorn/no-await-expression-member": "off",
       "unicorn/prefer-minimal-ternary": "off",
+      "unicorn/default-export-style": ["warn", { functions: "separate" }],
 
       // ============================================
       // Code Quality & Best Practices
