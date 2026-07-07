@@ -136,7 +136,7 @@ const baseConfig = [
       "no-multi-assign": "error",
       "no-multi-str": "error",
       "no-negated-condition": "warn",
-      "no-nested-ternary": "error",
+      "no-nested-ternary": "off",
       "no-new": "error",
       "no-new-func": "error",
       "no-new-wrappers": "error",
