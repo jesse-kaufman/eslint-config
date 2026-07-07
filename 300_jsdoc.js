@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/max-len */
 /** @file JSDoc-specific ESLint configuration. */
 import jsdocPlugin from "eslint-plugin-jsdoc"
 
