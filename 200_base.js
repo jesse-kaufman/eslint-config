@@ -38,7 +38,7 @@ const baseConfig = [
         "warn",
         {
           code: 100,
-          comments: 110,
+          comments: 120,
           ignoreUrls: true,
           ignoreTemplateLiterals: true,
           ignoreRegExpLiterals: true,
