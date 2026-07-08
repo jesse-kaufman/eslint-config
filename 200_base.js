@@ -86,7 +86,10 @@ const baseConfig = [
       // Code Quality & Best Practices
       // ============================================
       "no-script-url": "error",
-      "array-callback-return": ["error", { checkForEach: true }],
+      "array-callback-return": [
+        "error",
+        { checkForEach: true, allowVoid: true },
+      ],
       "arrow-body-style": [
         "warn",
         "as-needed",
