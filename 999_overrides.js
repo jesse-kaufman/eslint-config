@@ -78,7 +78,7 @@ const overrideConfigs = [
       "no-magic-numbers": "off",
       "@typescript-eslint/no-magic-numbers": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "import-x/default": "off",
+      "import-x/prefer-default-export": "off",
     },
   },
 ]
