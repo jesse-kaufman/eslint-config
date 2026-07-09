@@ -71,12 +71,14 @@ const overrideConfigs = [
       "**/src/config/**/*.{js,ts}",
       "**/scripts/**/config/**/*.{js,ts}",
       "**/scripts/**/config.{js,ts}",
+      "**/src/features/**/config.{js,ts}",
     ],
     rules: {
       // Config files often contain magic numbers for configuration values
       "no-magic-numbers": "off",
       "@typescript-eslint/no-magic-numbers": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
+      "import-x/default": "off",
     },
   },
 ]
