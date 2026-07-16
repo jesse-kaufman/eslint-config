@@ -21,6 +21,7 @@ const overrideConfigs = [
       "max-lines": "off",
       "no-magic-numbers": "off",
       "@typescript-eslint/no-magic-numbers": "off",
+      "unicorn/no-useless-promise-resolve-reject": "off",
       "import-x/no-unresolved": [
         "error",
         {
