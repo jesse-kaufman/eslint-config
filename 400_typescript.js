@@ -14,7 +14,17 @@ const projectRoot = path.dirname(import.meta.dirname)
 const sharedTypeScriptRules = {
   // Note: JSDoc rules are handled by ESLint/jsdoc.js, not here
   // This prevents the TypeScript preset from overwriting custom JSDoc rules
-
+  "no-restricted-imports": [
+    "warn",
+    {
+      patterns: [
+        {
+          regex: "^\\.\\.?/.*\\.js$",
+          message: "Omit the .js extension on relative imports.",
+        },
+      ],
+    },
+  ],
   "import-x/no-unresolved": "off",
   "import-x/namespace": "off",
   "import-x/default": "off",
