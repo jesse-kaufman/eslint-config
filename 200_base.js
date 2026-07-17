@@ -1,6 +1,5 @@
 /** @file Base ESLint configuration with language-agnostic rules. */
 import stylistic from "@stylistic/eslint-plugin"
-import eslintPluginPrettier from "eslint-plugin-prettier"
 import globals from "globals"
 
 const baseConfig = [
@@ -26,7 +25,6 @@ const baseConfig = [
       globals: { ...globals.browser, ...globals.node },
     },
     plugins: {
-      prettier: eslintPluginPrettier,
       "@stylistic": stylistic,
     },
     rules: {
@@ -46,7 +44,6 @@ const baseConfig = [
       ],
       "comma-dangle": ["error", "only-multiline"],
       "@stylistic/brace-style": ["error", "1tbs"],
-      "prettier/prettier": "warn",
       "@stylistic/semi": ["warn", "never"],
       quotes: [
         "error",

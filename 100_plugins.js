@@ -1,6 +1,6 @@
 /** @file Plugin imports and recommended configurations for ESLint. */
 import js from "@eslint/js"
-import skipFormatting from "@vue/eslint-config-prettier/skip-formatting"
+import prettierConfig from "eslint-config-prettier"
 import { flatConfigs } from "eslint-plugin-import-x"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
@@ -12,7 +12,7 @@ const pluginConfigs = [
   flatConfigs.recommended, // Import/export rules for all files
   flatConfigs.typescript,
   eslintPluginUnicorn.configs.recommended,
-  skipFormatting, // Prettier conflict prevention
+  prettierConfig, // Prettier conflict prevention
   {
     plugins: { jsdoc: jsdocPlugin },
   },
