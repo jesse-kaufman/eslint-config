@@ -14,11 +14,11 @@ import overrideConfigs from "./999_overrides.js"
  *
  * @example
  *   const workspaces = [
- *   		  { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
- *   		  { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
- *   		]
- *   		const config = buildConfig(workspaces)
- *   		export default config
+ *             		  { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
+ *             		  { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
+ *             		]
+ *             		const config = buildConfig(workspaces)
+ *             		export default config
  *
  * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers,
  *   etc.).
