@@ -2,129 +2,129 @@
 import jsdocPlugin from "eslint-plugin-jsdoc"
 
 const jsdocConfig = [
-	// JSDoc for JavaScript only
-	{
-		name: "app/jsdoc-js-config",
-		files: ["**/*.js"],
-		rules: {
-			...jsdocPlugin.configs["flat/recommended-typescript-flavor"].rules,
-		},
-	},
+  // JSDoc for JavaScript only
+  {
+    name: "app/jsdoc-js-config",
+    files: ["**/*.js"],
+    rules: {
+      ...jsdocPlugin.configs["flat/recommended-typescript-flavor"].rules,
+    },
+  },
 
-	// JSDoc recommended config for TypeScript files
-	{
-		name: "app/jsdoc-typescript-recommended",
-		files: ["**/*.ts"],
-		rules: {
-			...jsdocPlugin.configs["flat/recommended-typescript"].rules,
-			"jsdoc/require-throws-type": "off",
-		},
-	},
+  // JSDoc recommended config for TypeScript files
+  {
+    name: "app/jsdoc-typescript-recommended",
+    files: ["**/*.ts"],
+    rules: {
+      ...jsdocPlugin.configs["flat/recommended-typescript"].rules,
+      "jsdoc/require-throws-type": "off",
+    },
+  },
 
-	// Custom JSDoc configuration for all JavaScript/TypeScript files
-	{
-		name: "app/jsdoc-config",
-		files: ["**/*.{js,ts,vue}"],
-		rules: {
-			// ============================================
-			// JSDoc Rules
-			// ============================================
-			"jsdoc/check-indentation": ["warn", { allowIndentedSections: true }],
-			"jsdoc/check-line-alignment": "off",
-			"jsdoc/check-param-names": ["error", { enableFixer: true }],
-			"jsdoc/check-syntax": "error",
-			"jsdoc/check-types": "error",
-			"jsdoc/check-values": "warn",
-			"jsdoc/informative-docs": "warn",
-			"jsdoc/lines-before-block": [
-				"warn",
-				{
-					lines: 1,
-					ignoreSameLine: false,
-					checkBlockStarts: false,
-					ignoreSingleLines: true,
-				},
-			],
-			"jsdoc/no-undefined-types": [
-				"error",
-				{
-					definedTypes: [
-						"StringConstructor",
-						"BooleanConstructor",
-						"ArrayConstructor",
-						"ObjectConstructor",
-						"DateConstructor",
-					],
-				},
-			],
-			"jsdoc/tag-lines": ["warn", "any", { startLines: 1 }],
-			"jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
-			"jsdoc/require-asterisk-prefix": "warn",
-			"jsdoc/require-description": "warn",
-			"jsdoc/require-description-complete-sentence": [
-				"warn",
-				{ abbreviations: ["etc.", "e.g.", "i.e."] },
-			],
-			"jsdoc/require-file-overview": ["warn"],
-			"jsdoc/require-hyphen-before-param-description": "warn",
-			"jsdoc/require-jsdoc": [
-				"warn",
-				{
-					publicOnly: false,
-					require: {
-						FunctionDeclaration: true,
-						FunctionExpression: true,
-						ArrowFunctionExpression: false,
-						MethodDefinition: true,
-						ClassDeclaration: true,
-						ClassExpression: true,
-					},
-					checkConstructors: false,
-					contexts: [
-						// Top-level function declarations
-						"FunctionDeclaration",
+  // Custom JSDoc configuration for all JavaScript/TypeScript files
+  {
+    name: "app/jsdoc-config",
+    files: ["**/*.{js,ts,vue}"],
+    rules: {
+      // ============================================
+      // JSDoc Rules
+      // ============================================
+      "jsdoc/check-indentation": ["warn", { allowIndentedSections: true }],
+      "jsdoc/check-line-alignment": "off",
+      "jsdoc/check-param-names": ["error", { enableFixer: true }],
+      "jsdoc/check-syntax": "error",
+      "jsdoc/check-types": "error",
+      "jsdoc/check-values": "warn",
+      "jsdoc/informative-docs": "warn",
+      "jsdoc/lines-before-block": [
+        "warn",
+        {
+          lines: 1,
+          ignoreSameLine: false,
+          checkBlockStarts: false,
+          ignoreSingleLines: true,
+        },
+      ],
+      "jsdoc/no-undefined-types": [
+        "error",
+        {
+          definedTypes: [
+            "StringConstructor",
+            "BooleanConstructor",
+            "ArrayConstructor",
+            "ObjectConstructor",
+            "DateConstructor",
+          ],
+        },
+      ],
+      "jsdoc/tag-lines": ["warn", "any", { startLines: 1 }],
+      "jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
+      "jsdoc/require-asterisk-prefix": "warn",
+      "jsdoc/require-description": "warn",
+      "jsdoc/require-description-complete-sentence": [
+        "warn",
+        { abbreviations: ["etc.", "e.g.", "i.e."] },
+      ],
+      "jsdoc/require-file-overview": ["warn"],
+      "jsdoc/require-hyphen-before-param-description": "warn",
+      "jsdoc/require-jsdoc": [
+        "warn",
+        {
+          publicOnly: false,
+          require: {
+            FunctionDeclaration: true,
+            FunctionExpression: true,
+            ArrowFunctionExpression: false,
+            MethodDefinition: true,
+            ClassDeclaration: true,
+            ClassExpression: true,
+          },
+          checkConstructors: false,
+          contexts: [
+            // Top-level function declarations
+            "FunctionDeclaration",
 
-						// Arrow and function expressions assigned to variables
-						"VariableDeclarator > ArrowFunctionExpression",
-						"VariableDeclarator > FunctionExpression",
+            // Arrow and function expressions assigned to variables
+            "VariableDeclarator > ArrowFunctionExpression",
+            "VariableDeclarator > FunctionExpression",
 
-						// Exported functions and variables assigned to functions
-						"ExportNamedDeclaration > FunctionDeclaration",
-						"ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-						"ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
-						"ExportDefaultDeclaration > FunctionDeclaration",
-						"ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-						"ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+            // Exported functions and variables assigned to functions
+            "ExportNamedDeclaration > FunctionDeclaration",
+            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+            "ExportDefaultDeclaration > FunctionDeclaration",
+            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
 
-						// Class stuff
-						"PropertyDefinition",
-						"MethodDefinition",
-						"ClassDeclaration",
-						"ClassExpression",
-					],
-				},
-			],
-			"jsdoc/require-throws": "warn",
-			"jsdoc/sort-tags": [
-				"warn",
-				{
-					tagSequence: [
-						{ tags: ["example"] },
-						{ tags: ["callback"] },
-						{ tags: ["since", "access"] },
-						{ tags: ["class", "augments", "mixes"] },
-						{ tags: ["alias", "memberof"] },
-						{ tags: ["see", "link", "global"] },
-						{ tags: ["fires", "listens"] },
-						{ tags: ["param"] },
-						{ tags: ["yields"] },
-						{ tags: ["returns"] },
-					],
-					linesBetween: 0,
-				},
-			],
-		},
-	},
+            // Class stuff
+            "PropertyDefinition",
+            "MethodDefinition",
+            "ClassDeclaration",
+            "ClassExpression",
+          ],
+        },
+      ],
+      "jsdoc/require-throws": "warn",
+      "jsdoc/sort-tags": [
+        "warn",
+        {
+          tagSequence: [
+            { tags: ["example"] },
+            { tags: ["callback"] },
+            { tags: ["since", "access"] },
+            { tags: ["class", "augments", "mixes"] },
+            { tags: ["alias", "memberof"] },
+            { tags: ["see", "link", "global"] },
+            { tags: ["fires", "listens"] },
+            { tags: ["param"] },
+            { tags: ["yields"] },
+            { tags: ["returns"] },
+          ],
+          linesBetween: 0,
+        },
+      ],
+    },
+  },
 ]
 
 export default jsdocConfig
