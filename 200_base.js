@@ -31,12 +31,12 @@ const baseConfig = [
       // ============================================
       // Code Style & Formatting
       // ============================================
-      "eol-last": ["warn", "always"],
+      "eol-last": "off",
       "@stylistic/max-len": "off",
-      "comma-dangle": ["error", "only-multiline"],
+      "comma-dangle": "off",
       "@stylistic/brace-style": ["error", "1tbs"],
       "@stylistic/semi": ["warn", "never"],
-      quotes: ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }],
+      quotes: "off",
       "prefer-regex-literals": "error",
       "unicorn/comment-content": "off",
       "unicorn/no-unreadable-new-expression": "off",
@@ -104,7 +104,7 @@ const baseConfig = [
       "no-implicit-coercion": "error",
       "no-inner-declarations": "error",
       "no-extra-bind": "error",
-      "no-invalid-this": "error",
+      "no-invalid-this": "off",
       "no-labels": "error",
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
@@ -123,7 +123,7 @@ const baseConfig = [
       "no-sequences": ["error", { allowInParentheses: false }],
       "no-shadow": "warn",
       "no-template-curly-in-string": "error",
-      "no-undef-init": "error",
+      "no-undef-init": "off",
       "no-unmodified-loop-condition": "error",
       "no-unneeded-ternary": ["error", { defaultAssignment: false }],
       "no-unreachable-loop": "error",
@@ -155,15 +155,7 @@ const baseConfig = [
       // Naming Conventions
       // ============================================
       camelcase: ["warn", { ignoreImports: true }],
-      "capitalized-comments": [
-        "warn",
-        "always",
-        {
-          ignoreConsecutiveComments: true,
-          ignoreInlineComments: true,
-          ignorePattern: "prettier",
-        },
-      ],
+      "capitalized-comments": "off",
       "id-denylist": ["error", "e"], // Disallow 'e' as variable name
 
       // ============================================
@@ -287,7 +279,7 @@ const baseConfig = [
           warnOnUnassignedImports: true,
         },
       ],
-      "import-x/prefer-default-export": "warn",
+      "import-x/prefer-default-export": "off",
       "import-x/no-named-as-default-member": "off",
 
       // ============================================
