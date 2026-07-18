@@ -1,87 +1,84 @@
 /** @file Specialized overrides for specific file types and contexts. */
 
 const overrideConfigs = [
-  // ============================================
-  // Tooling Config File Overrides
-  // ============================================
-  {
-    name: "app/tooling-config-overrides",
-    files: [
-      "eslint.config.{js,ts}",
-      "eslint-config/*",
-      ".eslint-config/*",
-      "**/*.config.{js,ts}",
-      "eslint/**/*.{js,ts}",
-      ".eslint/**/*.{js,ts}",
-      ".*.js",
-      "**/__tests__/**/*.{js,ts}",
-    ],
-    rules: {
-      // Config files can be long and have magic numbers
-      "max-lines": "off",
-      "no-magic-numbers": "off",
-      "@typescript-eslint/no-magic-numbers": "off",
-      "unicorn/no-useless-promise-resolve-reject": "off",
-      "import-x/no-unresolved": [
-        "error",
-        {
-          ignore: ["@typescript-eslint/", "typescript-eslint"],
-        },
-      ],
-    },
-  },
+	// ============================================
+	// Tooling Config File Overrides
+	// ============================================
+	{
+		name: "app/tooling-config-overrides",
+		files: [
+			"eslint.config.{js,ts}",
+			"eslint-config/*",
+			".eslint-config/*",
+			"**/*.config.{js,ts}",
+			"eslint/**/*.{js,ts}",
+			".eslint/**/*.{js,ts}",
+			".*.js",
+			"**/__tests__/**/*.{js,ts}",
+		],
+		rules: {
+			// Config files can be long and have magic numbers
+			"max-lines": "off",
+			"no-magic-numbers": "off",
+			"@typescript-eslint/no-magic-numbers": "off",
+			"unicorn/no-useless-promise-resolve-reject": "off",
+			"import-x/no-unresolved": [
+				"error",
+				{
+					ignore: ["@typescript-eslint/", "typescript-eslint"],
+				},
+			],
+		},
+	},
 
-  // ============================================
-  // ESLint Example File Overrides
-  // ============================================
-  {
-    name: "app/eslint-example-overrides",
-    files: [
-      "eslint-config/eslint.example.js",
-      ".eslint-config/eslint.example.js",
-    ],
-    rules: {
-      "import-x/no-unresolved": [
-        "error",
-        {
-          ignore: ["./eslint-config/index.js", "./.eslint-config/index.js"],
-        },
-      ],
-    },
-  },
+	// ============================================
+	// ESLint Example File Overrides
+	// ============================================
+	{
+		name: "app/eslint-example-overrides",
+		files: ["eslint-config/eslint.example.js", ".eslint-config/eslint.example.js"],
+		rules: {
+			"import-x/no-unresolved": [
+				"error",
+				{
+					ignore: ["./eslint-config/index.js", "./.eslint-config/index.js"],
+				},
+			],
+		},
+	},
 
-  // ============================================
-  // ESLint Config File Overrides
-  // ============================================
-  {
-    name: "app/eslint-config-overrides",
-    files: ["eslint-config/*", ".eslint-config/*"],
-    rules: {
-      "unicorn/filename-case": "off",
-      "import-x/default": "off",
-    },
-  },
+	// ============================================
+	// ESLint Config File Overrides
+	// ============================================
+	{
+		name: "app/eslint-config-overrides",
+		files: ["eslint-config/*", ".eslint-config/*"],
+		rules: {
+			"unicorn/filename-case": "off",
+			"import-x/default": "off",
+		},
+	},
 
-  // ============================================
-  // Config Directory Overrides
-  // ============================================
-  {
-    name: "app/config-dir-overrides",
-    files: [
-      "**/src/config/*.{js,ts}",
-      "**/src/config/**/*.{js,ts}",
-      "**/scripts/**/config/**/*.{js,ts}",
-      "**/scripts/**/config.{js,ts}",
-      "**/src/features/**/config.{js,ts}",
-    ],
-    rules: {
-      // Config files often contain magic numbers for configuration values
-      "no-magic-numbers": "off",
-      "@typescript-eslint/no-magic-numbers": "off",
-      "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "import-x/prefer-default-export": "off",
-    },
-  },
+	// ============================================
+	// Config Directory Overrides
+	// ============================================
+	{
+		name: "app/config-dir-overrides",
+		files: [
+			"**/src/config/*.{js,ts}",
+			"**/src/config/**/*.{js,ts}",
+			"**/scripts/**/config/**/*.{js,ts}",
+			"**/scripts/**/config.{js,ts}",
+			"**/src/features/**/config.{js,ts}",
+		],
+		rules: {
+			// Config files often contain magic numbers for configuration values
+			"no-magic-numbers": "off",
+			"@typescript-eslint/no-magic-numbers": "off",
+			"@typescript-eslint/prefer-nullish-coalescing": "off",
+			"import-x/prefer-default-export": "off",
+		},
+	},
 ]
 
 export default overrideConfigs

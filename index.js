@@ -9,38 +9,42 @@ import vitestConfigs from "./500_vitest.js"
 import overrideConfigs from "./999_overrides.js"
 
 /**
- * Builds a complete ESLint configuration by combining shared configs with project-specific workspace configs.
+ * Builds a complete ESLint configuration by combining shared configs with project-specific
+ * workspace configs.
+ *
  * @example
- * const workspaces = [
- *   { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
- *   { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
- * ]
- * const config = buildConfig(workspaces)
- * export default config
- * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers, etc.).
+ * 	const workspaces = [
+ * 		  { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
+ * 		  { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
+ * 		]
+ * 		const config = buildConfig(workspaces)
+ * 		export default config
+ *
+ * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers,
+ *   etc.).
  * @returns {Array} Complete ESLint configuration array.
  */
 const buildConfig = (workspaces = []) => [
-  // 1. Plugin recommended configurations (must come first)
-  ...pluginConfigs,
+	// 1. Plugin recommended configurations (must come first)
+	...pluginConfigs,
 
-  // 2. Base configuration (applies to all files)
-  ...baseConfig,
+	// 2. Base configuration (applies to all files)
+	...baseConfig,
 
-  // 3. JSDoc configuration (applies to JS/TS files)
-  ...jsdocConfig,
+	// 3. JSDoc configuration (applies to JS/TS files)
+	...jsdocConfig,
 
-  // 4. Language-specific configurations
-  ...typeScriptConfig, // TypeScript files
-  ...vueConfig, // Vue.js files with TypeScript
-  ...javaScriptConfig, // Legacy JavaScript files
-  ...vitestConfigs, // Vitest configuration / test files
+	// 4. Language-specific configurations
+	...typeScriptConfig, // TypeScript files
+	...vueConfig, // Vue.js files with TypeScript
+	...javaScriptConfig, // Legacy JavaScript files
+	...vitestConfigs, // Vitest configuration / test files
 
-  // 5. Workspace-specific configurations (provided by project)
-  ...workspaces,
+	// 5. Workspace-specific configurations (provided by project)
+	...workspaces,
 
-  // 6. Specialized overrides (most specific, should come last)
-  ...overrideConfigs,
+	// 6. Specialized overrides (most specific, should come last)
+	...overrideConfigs,
 ]
 
 export default buildConfig

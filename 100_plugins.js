@@ -8,14 +8,14 @@ import eslintPluginUnicorn from "eslint-plugin-unicorn"
 // Universal plugin recommended configurations
 // These apply to all JavaScript/TypeScript files regardless of context
 const pluginConfigs = [
-  js.configs.recommended, // Core JavaScript rules
-  flatConfigs.recommended, // Import/export rules for all files
-  flatConfigs.typescript,
-  eslintPluginUnicorn.configs.recommended,
-  prettierConfig, // Prettier conflict prevention
-  {
-    plugins: { jsdoc: jsdocPlugin },
-  },
+	js.configs.recommended, // Core JavaScript rules
+	flatConfigs.recommended, // Import/export rules for all files
+	flatConfigs.typescript,
+	eslintPluginUnicorn.configs.recommended,
+	prettierConfig, // Prettier conflict prevention
+	{
+		plugins: { jsdoc: jsdocPlugin },
+	},
 ]
 
 export default pluginConfigs
