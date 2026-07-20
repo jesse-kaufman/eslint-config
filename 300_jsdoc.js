@@ -65,7 +65,10 @@ const jsdocConfig = [
         "warn",
         { abbreviations: ["etc.", "e.g.", "i.e."] },
       ],
-      "jsdoc/require-file-overview": ["warn"],
+      "jsdoc/require-file-overview": [
+        "warn",
+        { initialCommentsOnly: true, preventDuplicates: true, mustExist: true },
+      ],
       "jsdoc/require-hyphen-before-param-description": "warn",
       "jsdoc/require-jsdoc": [
         "warn",
