@@ -5,13 +5,10 @@
   "trailingComma": "es5",
   "htmlWhitespaceSensitivity": "ignore",
   "proseWrap": "always",
-  "printWidth": 100,
-  "sortPackageJson": false,
-  "ignorePatterns": [],
-  "tabWidth": 2,
+  "sortPackageJson": true,
+  "ignorePatterns": ["CHANGELOG.md"],
   "quoteProps": "as-needed",
   "singleAttributePerLine": false,
-  "useTabs": false,
   "sortImports": {
     "newlinesBetween": false,
     "groups": [
