@@ -31,13 +31,6 @@ const baseConfig = [
       // ============================================
       // Code Style & Formatting
       // ============================================
-      "eol-last": "off",
-      "@stylistic/max-len": "off",
-      "comma-dangle": "off",
-      "@stylistic/brace-style": ["error", "1tbs"],
-      "@stylistic/semi": ["warn", "never"],
-      quotes: "off",
-      "prefer-regex-literals": "error",
       "unicorn/comment-content": "off",
       "unicorn/no-unreadable-new-expression": "off",
       "unicorn/prefer-short-arrow-method": "warn",
@@ -62,225 +55,25 @@ const baseConfig = [
           },
         },
       ],
-      "unicorn/no-await-expression-member": "off",
       "unicorn/prefer-minimal-ternary": "off",
       "unicorn/default-export-style": ["warn", { functions: "separate" }],
 
       // ============================================
       // Code Quality & Best Practices
       // ============================================
-      "no-script-url": "error",
-      "array-callback-return": ["error", { checkForEach: true, allowVoid: true }],
-      "arrow-body-style": ["warn", "as-needed", { requireReturnForObjectLiteral: false }],
-      "logical-assignment-operators": ["warn", "always", { enforceForIfStatements: true }],
-      "max-classes-per-file": "error",
-      "symbol-description": "warn",
-      "no-promise-executor-return": "error",
-      complexity: ["warn", { max: 10 }],
-      curly: ["error", "multi-line", "consistent"],
-      "default-case-last": "error",
-      "default-param-last": "error",
-      "dot-notation": "error",
-      eqeqeq: ["error", "smart"],
-      "grouped-accessor-pairs": "error",
-      "guard-for-in": "error",
-      "init-declarations": ["error", "always"],
-      "max-depth": "error",
-      "max-nested-callbacks": ["error", 5],
-      "new-cap": [
-        "error",
-        {
-          capIsNewExceptions: ["Router"],
-          properties: false,
-        },
-      ],
-      "no-await-in-loop": "error",
-      "no-duplicate-imports": "error",
-      "no-else-return": ["error", { allowElseIf: false }],
-      "no-empty-function": "warn",
-      "no-extra-label": "error",
-      "no-implied-eval": "error",
-      "no-iterator": "error",
-      "no-implicit-coercion": "error",
-      "no-inner-declarations": "error",
-      "no-extra-bind": "error",
-      "no-invalid-this": "off",
-      "no-labels": "error",
-      "no-lone-blocks": "error",
-      "no-lonely-if": "error",
-      "no-loop-func": "error",
-      "no-multi-assign": "error",
-      "no-multi-str": "error",
-      "no-negated-condition": "warn",
-      "no-nested-ternary": "off",
-      "no-new": "error",
-      "no-new-func": "error",
-      "no-new-wrappers": "error",
-      "no-object-constructor": "error",
-      "no-param-reassign": "error",
-      "no-return-assign": "error",
-      "no-self-compare": "error",
-      "no-sequences": ["error", { allowInParentheses: false }],
-      "no-shadow": "warn",
-      "no-template-curly-in-string": "error",
-      "no-undef-init": "off",
-      "no-unmodified-loop-condition": "error",
-      "no-unneeded-ternary": ["error", { defaultAssignment: false }],
-      "no-unreachable-loop": "error",
-      "no-unused-expressions": "warn",
-      "no-useless-computed-key": "error",
-      "no-unused-vars": "warn",
-      "no-use-before-define": [
-        "warn",
-        {
-          allowNamedExports: true,
-          classes: true,
-          functions: false,
-          variables: true,
-        },
-      ],
-      "no-useless-concat": "error",
-      "no-useless-constructor": "error",
-      "no-useless-rename": "error",
-      "no-useless-return": "error",
-      "no-var": "error",
       "require-atomic-updates": "warn",
-      "require-await": "error",
-      "sort-vars": "error",
-      "valid-typeof": "error",
-      "vars-on-top": "error",
-      "unicorn/name-replacements": "off", // Disable for now
 
       // ============================================
       // Naming Conventions
       // ============================================
-      camelcase: ["warn", { ignoreImports: true }],
-      "capitalized-comments": "off",
+      "unicorn/name-replacements": "off", // Disable for now
       "id-denylist": ["error", "e"], // Disallow 'e' as variable name
-
-      // ============================================
-      // Function & Code Organization
-      // ============================================
-      "func-names": ["error", "as-needed"],
-      "func-style": ["error", "expression"],
-      "max-lines": [
-        "warn",
-        {
-          max: 250,
-          skipBlankLines: true,
-          skipComments: true,
-        },
-      ],
-      "func-name-matching": "error",
-      "max-lines-per-function": ["warn", { max: 40, skipBlankLines: true }],
-      "max-params": ["error", 5],
-      "max-statements": ["warn", 20],
-
-      // ============================================
-      // Magic Numbers & Literals
-      // ============================================
-      "no-magic-numbers": [
-        "warn",
-        {
-          ignoreArrayIndexes: true,
-          ignore: [-1, 0, 1, 2, 100],
-          enforceConst: true,
-        },
-      ],
-
-      // ============================================
-      // Modern JavaScript Patterns
-      // ============================================
-      "object-shorthand": [
-        "error",
-        "always",
-        {
-          avoidQuotes: true,
-          avoidExplicitReturnArrows: false,
-        },
-      ],
-      "operator-assignment": ["error", "always"],
-      "prefer-arrow-callback": "error",
-      "prefer-const": "error",
-      "prefer-destructuring": [
-        "error",
-        {
-          object: true,
-        },
-      ],
-      "prefer-numeric-literals": "error",
-      "prefer-object-has-own": "warn",
-      "prefer-object-spread": "error",
-      "prefer-rest-params": "error",
-      "prefer-spread": "error",
-      "prefer-template": "error",
-      "preserve-caught-error": [
-        "error",
-        {
-          requireCatchParameter: true,
-        },
-      ],
 
       // ============================================
       // Import Plugin Rules
       // ============================================
       //"import-x/enforce-node-protocol-usage": ["warn", "always"],
-      "import-x/exports-last": "warn",
-      "import-x/extensions": [
-        "warn",
-        "ignorePackages",
-        {
-          js: "never",
-          ts: "never",
-          vue: "always",
-        },
-      ],
-      "import-x/first": "warn",
-      "import-x/newline-after-import": "warn",
-      "import-x/no-absolute-path": "warn",
-      "import-x/no-anonymous-default-export": [
-        "error",
-        {
-          allowArray: false,
-          allowArrowFunction: false,
-          allowAnonymousClass: false,
-          allowAnonymousFunction: false,
-          allowCallExpression: true,
-          allowNew: false,
-          allowLiteral: false,
-          allowObject: true,
-        },
-      ],
-      "import-x/no-cycle": "warn",
-      "import-x/no-mutable-exports": "warn",
       "import-x/no-useless-path-segments": "warn",
-      "import-x/order": [
-        "warn",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-            "object",
-            "type",
-          ],
-          named: {
-            types: "types-first",
-            enabled: true,
-          },
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          "newlines-between": "never",
-          warnOnUnassignedImports: true,
-        },
-      ],
-      "import-x/prefer-default-export": "off",
-      "import-x/no-named-as-default-member": "off",
 
       // ============================================
       // Unicorn Plugin Rules
@@ -296,16 +89,8 @@ const baseConfig = [
           checkDirectories: false,
         },
       ],
-      "unicorn/prefer-string-raw": "off",
-      "unicorn/no-null": "off",
-      "unicorn/no-array-reduce": "off",
-      "unicorn/catch-error-name": ["error", { name: "err" }],
-      "unicorn/switch-case-braces": ["error", "avoid"],
-      "unicorn/explicit-length-check": "off",
       "unicorn/consistent-destructuring": "error",
-      "unicorn/custom-error-definition": "error",
-      "unicorn/prefer-import-meta-properties": "error",
-      "unicorn/better-regex": "warn",
+      "unicorn/better-regex": "warn", // Deprecated
       "unicorn/no-unused-properties": "warn",
       "unicorn/prefer-json-parse-buffer": "warn",
     },

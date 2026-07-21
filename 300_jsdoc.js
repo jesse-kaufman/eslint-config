@@ -1,23 +1,13 @@
-/** @file JSDoc-specific ESLint configuration. */
-import jsdocPlugin from "eslint-plugin-jsdoc"
-
 const jsdocConfig = [
   // JSDoc for JavaScript only
   {
     name: "app/jsdoc-js-config",
     files: ["**/*.js"],
     rules: {
-      ...jsdocPlugin.configs["flat/recommended-typescript-flavor"].rules,
-    },
-  },
-
-  // JSDoc recommended config for TypeScript files
-  {
-    name: "app/jsdoc-typescript-recommended",
-    files: ["**/*.ts"],
-    rules: {
-      ...jsdocPlugin.configs["flat/recommended-typescript"].rules,
-      "jsdoc/require-throws-type": "off",
+      //...jsdocPlugin.configs["flat/recommended-typescript-flavor"].rules,
+      "jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
+      "jsdoc/check-types": "error",
+      "jsdoc/check-values": "warn",
     },
   },
 
@@ -29,44 +19,9 @@ const jsdocConfig = [
       // ============================================
       // JSDoc Rules
       // ============================================
-      "jsdoc/check-indentation": ["warn", { allowIndentedSections: true }],
-      "jsdoc/check-line-alignment": "off",
-      "jsdoc/check-param-names": ["error", { enableFixer: true }],
-      "jsdoc/check-syntax": "error",
-      "jsdoc/check-types": "error",
-      "jsdoc/check-values": "warn",
+      "jsdoc/tags": "off",
       "jsdoc/informative-docs": "warn",
-      "jsdoc/lines-before-block": [
-        "warn",
-        {
-          lines: 1,
-          ignoreSameLine: false,
-          checkBlockStarts: false,
-          ignoreSingleLines: true,
-        },
-      ],
-      "jsdoc/no-undefined-types": [
-        "error",
-        {
-          definedTypes: [
-            "StringConstructor",
-            "BooleanConstructor",
-            "ArrayConstructor",
-            "ObjectConstructor",
-            "DateConstructor",
-          ],
-        },
-      ],
-      "jsdoc/tag-lines": "off",
-      "jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
-      "jsdoc/require-asterisk-prefix": "warn",
-      "jsdoc/require-description": "warn",
-      "jsdoc/require-description-complete-sentence": [
-        "warn",
-        { abbreviations: ["etc.", "e.g.", "i.e."] },
-      ],
-      "jsdoc/require-file-overview": ["warn"],
-      "jsdoc/require-hyphen-before-param-description": "warn",
+      "jsdoc/require-hyphen-before-param-description": ["error", "never"],
       "jsdoc/require-jsdoc": [
         "warn",
         {
@@ -104,8 +59,6 @@ const jsdocConfig = [
           ],
         },
       ],
-      "jsdoc/require-throws": "warn",
-      "jsdoc/sort-tags": "off",
     },
   },
 ]

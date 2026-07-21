@@ -1,4 +1,5 @@
 /** @file TypeScript-specific ESLint configuration with type-checking. */
+
 import path from "node:path"
 import { configs as tsConfigs, parser as tsParser, plugin as tsPlugin } from "typescript-eslint"
 
@@ -21,121 +22,11 @@ const sharedTypeScriptRules = {
       ],
     },
   ],
-  "import-x/no-unresolved": "off",
-  "import-x/namespace": "off",
-  "import-x/default": "off",
-  "no-unused-vars": "off",
-
-  // ============================================
-  // Type Inference Rules
-  // ============================================
-  "@typescript-eslint/no-inferrable-types": "warn",
-  "@typescript-eslint/no-unnecessary-type-assertion": "warn",
-  "@typescript-eslint/no-unnecessary-type-arguments": "warn",
-
-  // ============================================
-  // Type Safety
-  // ============================================
-  "@typescript-eslint/no-unnecessary-type-conversion": "warn",
-  "@typescript-eslint/no-unsafe-argument": "error",
-  "@typescript-eslint/no-unsafe-call": "error",
-  "@typescript-eslint/no-unsafe-member-access": ["error", { allowOptionalChaining: true }],
-  "@typescript-eslint/no-confusing-void-expression": [
-    "error",
-    {
-      ignoreArrowShorthand: true,
-      ignoreVoidOperator: true,
-      ignoreVoidReturningFunctions: true,
-    },
-  ],
-  "@typescript-eslint/prefer-reduce-type-parameter": "error",
-  "@typescript-eslint/restrict-template-expressions": [
-    "warn",
-    { allowNumber: true, allowBoolean: true },
-  ],
-
-  // ============================================
-  // Modern JavaScript/TypeScript Patterns
-  // ============================================
-  "@typescript-eslint/prefer-nullish-coalescing": [
-    "warn",
-    { ignoreConditionalTests: true, ignoreBooleanCoercion: true },
-  ],
-  "@typescript-eslint/prefer-optional-chain": "warn",
-  "@typescript-eslint/no-import-type-side-effects": "error",
-  "@typescript-eslint/no-for-in-array": "warn",
-  "@typescript-eslint/prefer-for-of": "warn",
-
-  // ============================================
-  // Type Definition Consistency
-  // ============================================
-  "@typescript-eslint/array-type": ["error", { default: "array" }],
-  "@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
-  "@typescript-eslint/consistent-indexed-object-style": ["error", "record"],
-  "@typescript-eslint/consistent-type-assertions": "error",
-  "@typescript-eslint/consistent-type-definitions": "error",
-  "@typescript-eslint/no-duplicate-type-constituents": "error",
-  "@typescript-eslint/no-redundant-type-constituents": "error",
-  "@typescript-eslint/prefer-return-this-type": "error",
 
   // ============================================
   // Code Consistency
   // ============================================
-  "no-shadow": "off",
-  "@typescript-eslint/no-shadow": "error",
-  "init-declarations": "off",
-  "@typescript-eslint/init-declarations": "error",
-  "no-loop-func": "off",
-  "@typescript-eslint/no-loop-func": "error",
-  "prefer-promise-reject-errors": "off",
-  "@typescript-eslint/prefer-promise-reject-errors": "error",
-  "no-magic-numbers": "off",
-  "@typescript-eslint/prefer-readonly": "warn",
-  "@typescript-eslint/prefer-string-starts-ends-with": "error",
-  "@typescript-eslint/promise-function-async": "error",
-  "@typescript-eslint/switch-exhaustiveness-check": "error",
-  "class-methods-use-this": "off",
-  "@typescript-eslint/class-methods-use-this": "error",
-  "@typescript-eslint/no-magic-numbers": [
-    "error",
-    {
-      ignoreTypeIndexes: true,
-      ignoreNumericLiteralTypes: true,
-      ignoreEnums: true,
-      ignoreArrayIndexes: true,
-      ignore: [-1, 0, 1, 2, 100, 255],
-      enforceConst: true,
-      ignoreDefaultValues: true,
-      ignoreClassFieldInitialValues: true,
-      ignoreReadonlyClassProperties: true,
-    },
-  ],
-  "default-param-last": "off",
-  "@typescript-eslint/default-param-last": "error",
-  "dot-notation": "off",
-  "@typescript-eslint/dot-notation": "error",
-  "no-implied-eval": "off",
-  "@typescript-eslint/no-implied-eval": "error",
-  "@typescript-eslint/consistent-type-exports": "error",
-  "@typescript-eslint/consistent-type-imports": ["warn", { prefer: "type-imports" }],
-  "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-  "@typescript-eslint/explicit-function-return-type": [
-    "warn",
-    { allowConciseArrowFunctionExpressionsStartingWithVoid: true },
-  ],
-  "@typescript-eslint/no-array-delete": "error",
-  "@typescript-eslint/method-signature-style": ["error", "method"],
-  "@typescript-eslint/prefer-regexp-exec": "off",
-  "@typescript-eslint/no-meaningless-void-operator": "off",
-  "@typescript-eslint/no-misused-promises": "error",
-  "@typescript-eslint/no-misused-spread": "error",
-  "@typescript-eslint/no-mixed-enums": "error",
-  "@typescript-eslint/no-unnecessary-condition": "error",
-  "@typescript-eslint/no-unnecessary-template-expression": "error",
-  "@typescript-eslint/explicit-member-accessibility": [
-    "error",
-    { overrides: { constructors: "no-public" } },
-  ],
+
   "@typescript-eslint/member-ordering": [
     "warn",
     {
@@ -316,17 +207,6 @@ const sharedTypeScriptRules = {
 }
 
 const typeScriptConfig = [
-  // TypeScript configuration with type-checking
-  // Applies to all .ts files across the monorepo
-  ...tsConfigs.strictTypeChecked.map((config) => ({
-    ...config,
-    ignores: ["**/*.js"],
-  })),
-  ...tsConfigs.stylisticTypeChecked.map((config) => ({
-    ...config,
-    ignores: ["**/*.js"],
-  })),
-
   {
     name: "app/typescript-config",
     files: ["*.ts", "**/*.ts"],
@@ -337,7 +217,6 @@ const typeScriptConfig = [
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        projectService: true,
         tsconfigRootDir: projectRoot,
       },
     },

@@ -16,19 +16,7 @@ const overrideConfigs = [
       ".*.js",
       "**/__tests__/**/*.{js,ts}",
     ],
-    rules: {
-      // Config files can be long and have magic numbers
-      "max-lines": "off",
-      "no-magic-numbers": "off",
-      "@typescript-eslint/no-magic-numbers": "off",
-      "unicorn/no-useless-promise-resolve-reject": "off",
-      "import-x/no-unresolved": [
-        "error",
-        {
-          ignore: ["@typescript-eslint/", "typescript-eslint"],
-        },
-      ],
-    },
+    rules: {},
   },
 
   // ============================================
@@ -37,14 +25,7 @@ const overrideConfigs = [
   {
     name: "app/eslint-example-overrides",
     files: ["eslint-config/eslint.example.js", ".eslint-config/eslint.example.js"],
-    rules: {
-      "import-x/no-unresolved": [
-        "error",
-        {
-          ignore: ["./eslint-config/index.js", "./.eslint-config/index.js"],
-        },
-      ],
-    },
+    rules: {},
   },
 
   // ============================================
@@ -55,7 +36,6 @@ const overrideConfigs = [
     files: ["eslint-config/*", ".eslint-config/*"],
     rules: {
       "unicorn/filename-case": "off",
-      "import-x/default": "off",
     },
   },
 
@@ -71,13 +51,7 @@ const overrideConfigs = [
       "**/scripts/**/config.{js,ts}",
       "**/src/features/**/config.{js,ts}",
     ],
-    rules: {
-      // Config files often contain magic numbers for configuration values
-      "no-magic-numbers": "off",
-      "@typescript-eslint/no-magic-numbers": "off",
-      "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "import-x/prefer-default-export": "off",
-    },
+    rules: {},
   },
 ]
 
