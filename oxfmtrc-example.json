@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "semi": false,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "htmlWhitespaceSensitivity": "ignore",
+  "proseWrap": "always",
+  "printWidth": 100,
+  "sortPackageJson": false,
+  "ignorePatterns": [],
+  "tabWidth": 2,
+  "quoteProps": "as-needed",
+  "singleAttributePerLine": false,
+  "useTabs": false,
+  "sortImports": {
+    "newlinesBetween": false,
+    "groups": [
+      "builtin",
+      "external",
+      ["internal", "subpath"],
+      ["parent", "sibling", "index"],
+      "style",
+      "type",
+      "unknown"
+    ]
+  },
+  "vueIndentScriptAndStyle": false,
+  "sortTailwindcss": true,
+  "arrowParens": "always",
+  "embeddedLanguageFormatting": "auto",
+  "jsdoc": {
+    "capitalizeDescriptions": true,
+    "addDefaultToDescription": true,
+    "bracketSpacing": false,
+    "commentLineStrategy": "keep",
+    "descriptionTag": false,
+    "descriptionWithDot": true,
+    "keepUnparsableExampleIndent": false,
+    "lineWrappingStyle": "balance",
+    "preferCodeFences": true,
+    "separateReturnsFromParam": false,
+    "separateTagGroups": false
+  },
+  "objectWrap": "preserve"
+}

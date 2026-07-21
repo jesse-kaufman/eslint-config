@@ -1,4 +1,5 @@
 /** @file Project-specific ESLint configuration. */
+
 import buildConfig from "./eslint-config/index.js"
 
 // Copy this file to the project root and rename to eslint.config.js

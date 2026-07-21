@@ -12,14 +12,6 @@
     "browser": true,
     "node": true
   },
-  "settings": {
-    "import-x/extensions": [".ts", ".tsx", ".cts", ".mts", ".js", ".jsx", ".cjs", ".mjs"],
-    "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
-    "import-x/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".cts", ".mts"]
-    },
-    "import-x/resolver": { "typescript": true }
-  },
   "ignorePatterns": [
     "**/node_modules/**",
     "**/dist/**",
@@ -769,7 +761,8 @@
         "vitest/valid-describe-callback": ["warn"],
         "vitest/valid-expect": ["warn"],
         "vitest/valid-expect-in-promise": ["warn"],
-        "vitest/require-hook": ["warn"]
+        "vitest/require-hook": ["warn"],
+        "unicorn/no-useless-undefined": "off"
       },
       "plugins": ["vitest"]
     },
@@ -797,6 +790,7 @@
         "jsdoc/require-property-type": "warn",
         "jsdoc/require-throws-type": "warn",
         "jsdoc/require-yields-type": "warn",
+        "no-unused-vars": "error",
         "import/extensions": [
           "warn",
           "ignorePackages",

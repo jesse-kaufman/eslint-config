@@ -1,16 +1,8 @@
 /** @file TypeScript-specific ESLint configuration with type-checking. */
 
-import path from "node:path"
-import { configs as tsConfigs, parser as tsParser, plugin as tsPlugin } from "typescript-eslint"
-
-// Get project root directory (parent of ESLint directory)
-const projectRoot = path.dirname(import.meta.dirname)
-
 // Shared TypeScript rules used by Vue.js files
 // This prevents duplication of rules between TypeScript and Vue.js configs
 const sharedTypeScriptRules = {
-  // Note: JSDoc rules are handled by ESLint/jsdoc.js, not here
-  // This prevents the TypeScript preset from overwriting custom JSDoc rules
   "no-restricted-imports": [
     "warn",
     {
@@ -206,27 +198,5 @@ const sharedTypeScriptRules = {
   ],
 }
 
-const typeScriptConfig = [
-  {
-    name: "app/typescript-config",
-    files: ["*.ts", "**/*.ts"],
-    // Spread in TypeScript ESLint strict and stylistic type-checked rules
-
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        tsconfigRootDir: projectRoot,
-      },
-    },
-    plugins: {
-      "@typescript-eslint": tsPlugin,
-    },
-    rules: sharedTypeScriptRules,
-  },
-]
-
 // Export both the config and the shared rules for use in Vue.js
-export { sharedTypeScriptRules }
-export default typeScriptConfig
+export default sharedTypeScriptRules
