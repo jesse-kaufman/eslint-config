@@ -73,6 +73,7 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // Code Style & Formatting
       // ============================================
+      "unicorn/no-incorrect-template-string-interpolation": ["warn"],
       "unicorn/comment-content": "off", // Enable this later
       "unicorn/no-unreadable-new-expression": "off",
       "unicorn/prefer-short-arrow-method": "warn",
@@ -149,6 +150,12 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       "jsdoc/informative-docs": "warn",
       "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
+      "jsdoc/require-description-complete-sentence": [
+        "warn",
+        {
+          abbreviations: ["e.g."],
+        },
+      ],
       "jsdoc/require-jsdoc": [
         "warn",
         {

@@ -126,6 +126,7 @@ const vueRules = {
   "import-x/namespace": "off",
   "import-x/default": "off",
   "no-unused-vars": "off",
+  "@typescript-eslint/no-unused-vars": "warn",
 
   // ============================================
   // Type Inference Rules
@@ -195,21 +196,8 @@ const vueRules = {
   "@typescript-eslint/promise-function-async": "warn",
   "@typescript-eslint/switch-exhaustiveness-check": "warn",
   "class-methods-use-this": "off",
+  "@typescript-eslint/no-base-to-string": "warn",
   "@typescript-eslint/class-methods-use-this": "warn",
-  "@typescript-eslint/no-magic-numbers": [
-    "warn",
-    {
-      ignoreTypeIndexes: true,
-      ignoreNumericLiteralTypes: true,
-      ignoreEnums: true,
-      ignoreArrayIndexes: true,
-      ignore: [-1, 0, 1, 2, 100, 255],
-      enforceConst: true,
-      ignoreDefaultValues: true,
-      ignoreClassFieldInitialValues: true,
-      ignoreReadonlyClassProperties: true,
-    },
-  ],
   "default-param-last": "off",
   "@typescript-eslint/default-param-last": "warn",
   "dot-notation": "off",
