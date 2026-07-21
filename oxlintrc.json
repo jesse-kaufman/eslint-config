@@ -2,9 +2,7 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["import", "unicorn", "typescript", "vue", "jsdoc"],
   "jsPlugins": ["@stylistic/eslint-plugin"],
-  "categories": {
-    "correctness": "off"
-  },
+  "categories": {},
   "options": { "typeAware": true },
   "env": {
     "builtin": true,
