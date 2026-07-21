@@ -11,7 +11,7 @@ const projectRoot = path.dirname(import.meta.dirname)
 
 const vueConfig = [
   // Recommended configurations (must come before custom config)
-  ...vue.configs["flat/recommended"],
+  //...vue.configs["flat/recommended"],
 
   // + TypeScript configuration
   // Uses vue-eslint-parser with TypeScript parser for <script> blocks
@@ -25,7 +25,6 @@ const vueConfig = [
         ecmaVersion: "latest",
         sourceType: "module",
         extraFileExtensions: [".vue"],
-        projectService: true,
         tsconfigRootDir: projectRoot,
       },
     },
@@ -34,7 +33,6 @@ const vueConfig = [
       vue,
     },
     rules: {
-      "max-lines": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
       // ============================================
       // TypeScript
       // ============================================
@@ -74,7 +72,6 @@ const vueConfig = [
         },
       ],
       "vue/component-api-style": ["error", ["script-setup"]],
-      "vue/no-required-prop-with-default": "off",
       "vue/component-name-in-template-casing": [
         "warn",
         "PascalCase",
@@ -109,7 +106,6 @@ const vueConfig = [
       // Template Formatting
       // ============================================
       "vue/html-indent": 0,
-      "vue/max-attributes-per-line": "off",
       "vue/singleline-html-element-content-newline": 0,
       "vue/html-button-has-type": ["warn"],
       "vue/html-self-closing": [
@@ -148,47 +144,6 @@ const vueConfig = [
           { blankLine: "always", prev: "tbody", next: "tfoot" },
         ],
       ],
-    },
-  },
-
-  // ============================================
-  // JSDoc
-  // ============================================
-  {
-    name: "app/vue-jsdoc-overrides",
-    files: ["**/*.vue"],
-    rules: {
-      // Files don't need file-level JSDoc comments
-      "jsdoc/require-file-overview": "off",
-    },
-  },
-
-  // ============================================
-  // Icon Component Overrides
-  // ============================================
-  {
-    name: "app/vue-icon-overrides",
-    files: ["**/Icons/**/*.vue"],
-    rules: {
-      // Icon components often have very long SVG path strings
-      "@stylistic/max-len": "off",
-    },
-  },
-
-  // ============================================
-  // Composable/Store Overrides
-  // ============================================
-  {
-    name: "app/composable-and-store-overrides",
-    files: ["**/composables/*", "**/stores/*"],
-    rules: {
-      // Composables/stores often need to be longer than typical functions
-      "max-lines-per-function": "off",
-      "max-statements": "off",
-      // Vue.js composables/stores are designed to be destructured and don't use `this`
-      "@typescript-eslint/unbound-method": "off",
-      // Don't require return type for composables
-      "@typescript-eslint/explicit-function-return-type": "off",
     },
   },
 ]

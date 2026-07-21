@@ -1,11 +1,12 @@
 /** @file Main entry point for shared ESLint configurations. */
+
+import oxlint from "eslint-plugin-oxlint"
 import pluginConfigs from "./100_plugins.js"
 import baseConfig from "./200_base.js"
 import jsdocConfig from "./300_jsdoc.js"
 import typeScriptConfig from "./400_typescript.js"
 import vueConfig from "./410_vue.js"
 import javaScriptConfig from "./420_javascript.js"
-import vitestConfigs from "./500_vitest.js"
 import overrideConfigs from "./999_overrides.js"
 
 /**
@@ -13,14 +14,16 @@ import overrideConfigs from "./999_overrides.js"
  * workspace configs.
  *
  * @example
+ *   ;```js
  *   const workspaces = [
- *                 		  { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
- *                 		  { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
- *                 		]
- *                 		const config = buildConfig(workspaces)
- *                 		export default config
+ *     { name: "app/backend-workspace", files: ["packages/backend/**"], settings: {...} },
+ *     { name: "app/frontend-workspace", files: ["packages/frontend/**"], settings: {...} },
+ *   ]
+ *   const config = buildConfig(workspaces)
+ *   export default config
+ *   ```
  *
- * @param {Array} workspaces - Array of workspace-specific configuration objects (import resolvers,
+ * @param {Array} workspaces Array of workspace-specific configuration objects (import resolvers,
  *   etc.).
  * @returns {Array} Complete ESLint configuration array.
  */
@@ -38,13 +41,13 @@ const buildConfig = (workspaces = []) => [
   ...typeScriptConfig, // TypeScript files
   ...vueConfig, // Vue.js files with TypeScript
   ...javaScriptConfig, // Legacy JavaScript files
-  ...vitestConfigs, // Vitest configuration / test files
 
   // 5. Workspace-specific configurations (provided by project)
   ...workspaces,
 
   // 6. Specialized overrides (most specific, should come last)
   ...overrideConfigs,
+  ...oxlint.configs["flat/recommended"], // oxlint should be the last one
 ]
 
 export default buildConfig
