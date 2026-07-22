@@ -250,7 +250,7 @@
     "max-lines": [
       "warn",
       {
-        "max": 250,
+        "max": 300,
         "skipBlankLines": true,
         "skipComments": true
       }
@@ -377,7 +377,14 @@
     "unicorn/no-useless-switch-case": "error",
     "unicorn/no-useless-undefined": "error",
     "unicorn/no-zero-fractions": "error",
-    "unicorn/numeric-separators-style": "error",
+    "unicorn/numeric-separators-style": [
+      "error",
+      {
+        "number": {
+          "fractionGroupLength": 3
+        }
+      }
+    ],
     "unicorn/prefer-add-event-listener": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat": "error",
@@ -700,6 +707,15 @@
       "files": ["**/Icons/**/*.vue"],
       "rules": {
         "@stylistic/max-len": "off"
+      }
+    },
+
+    // LEGACY SCHEMA OVERRIDES
+    {
+      "files": ["packages/config/src/schemas/**/*.ts"],
+      "rules": {
+        "eslint/max-lines": "off",
+        "max-statements": "off"
       }
     },
 
