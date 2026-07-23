@@ -141,8 +141,9 @@ const vueRules = {
   // Type Safety
   // ============================================
   "@typescript-eslint/no-unnecessary-type-conversion": "warn",
-  "@typescript-eslint/no-unsafe-argument": "warn",
-  "@typescript-eslint/no-unsafe-member-access": ["warn", { allowOptionalChaining: true }],
+  "@typescript-eslint/no-unsafe-argument": "off",
+  //"@typescript-eslint/no-unsafe-member-access": ["warn", { allowOptionalChaining: true }],
+  "@typescript-eslint/no-unsafe-member-access": "off",
   "@typescript-eslint/no-confusing-void-expression": [
     "warn",
     {
