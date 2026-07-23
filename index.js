@@ -151,10 +151,12 @@ const buildConfig = (workspaces = []) => [
       "jsdoc/require-file-overview": [
         "warn",
         {
-          file: {
-            initialCommentsOnly: true,
-            mustExist: true,
-            preventDuplicates: true,
+          tags: {
+            file: {
+              initialCommentsOnly: true,
+              mustExist: true,
+              preventDuplicates: true,
+            },
           },
         },
       ],
