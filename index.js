@@ -139,7 +139,7 @@ const buildConfig = (workspaces = []) => [
   },
 
   // ------------------------------------------------------
-  // 3. JSDoc configuration (applies to JS/TS files)
+  // 3. JSDoc configuration (applies to JS/TS/Vue files)
   // ------------------------------------------------------
   {
     name: "app/jsdoc-config",
@@ -148,6 +148,16 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // JSDoc Rules
       // ============================================
+      "jsdoc/require-file-overview": [
+        "warn",
+        {
+          file: {
+            initialCommentsOnly: true,
+            mustExist: true,
+            preventDuplicates: true,
+          },
+        },
+      ],
       "jsdoc/informative-docs": "warn",
       "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
       "jsdoc/require-description-complete-sentence": [
