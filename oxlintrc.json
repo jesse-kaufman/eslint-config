@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["import", "unicorn", "typescript", "vue", "jsdoc"],
+  "plugins": ["import", "unicorn", "typescript", "vue", "jsdoc", "promise", "vitest"],
   "jsPlugins": ["@stylistic/eslint-plugin"],
   "categories": {},
   "options": { "typeAware": true },
@@ -61,7 +61,6 @@
     ],
     "import/no-cycle": "warn",
     "import/no-mutable-exports": "warn",
-    "import/prefer-default-export": "off",
     "import/no-named-as-default-member": "off",
 
     // ---------------------------------------
@@ -250,7 +249,7 @@
     "max-lines": [
       "warn",
       {
-        "max": 300,
+        "max": 250,
         "skipBlankLines": true,
         "skipComments": true
       }
@@ -286,7 +285,7 @@
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "preserve-caught-error": ["error", { "requireCatchParameter": false }],
+    "preserve-caught-error": ["error", { "requireCatchParameter": true }],
     "no-unused-vars": "error",
     "no-shadow": "error",
     "init-declarations": "error",
@@ -377,14 +376,7 @@
     "unicorn/no-useless-switch-case": "error",
     "unicorn/no-useless-undefined": "error",
     "unicorn/no-zero-fractions": "error",
-    "unicorn/numeric-separators-style": [
-      "error",
-      {
-        "number": {
-          "fractionGroupLength": 3
-        }
-      }
-    ],
+    "unicorn/numeric-separators-style": "error",
     "unicorn/prefer-add-event-listener": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat": "error",
@@ -694,7 +686,6 @@
       ],
       "rules": {
         "no-magic-numbers": "off",
-        "import/prefer-default-export": "off",
         "typescript/prefer-nullish-coalescing": "off"
       }
     },
@@ -707,15 +698,6 @@
       "files": ["**/Icons/**/*.vue"],
       "rules": {
         "@stylistic/max-len": "off"
-      }
-    },
-
-    // LEGACY SCHEMA OVERRIDES
-    {
-      "files": ["packages/config/src/schemas/**/*.ts"],
-      "rules": {
-        "eslint/max-lines": "off",
-        "max-statements": "off"
       }
     },
 
