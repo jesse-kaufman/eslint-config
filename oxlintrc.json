@@ -485,6 +485,7 @@
         "jsdoc/require-throws-type": "off",
 
         // Apply core TypeScript rules to TS/Vue files
+        "typescript/strict-void-return": "error",
         "typescript/no-unnecessary-condition": "error",
         "typescript/prefer-optional-chain": "warn",
         "typescript/await-thenable": "error",
@@ -596,7 +597,7 @@
         "typescript/no-import-type-side-effects": "error",
         "typescript/consistent-generic-constructors": ["error", "constructor"],
         "typescript/consistent-indexed-object-style": ["error", "record"],
-        "typescript/prefer-readonly": "warn",
+        "typescript/prefer-readonly": "error",
         "typescript/promise-function-async": "error",
         "typescript/switch-exhaustiveness-check": "error",
         "typescript/consistent-type-exports": "error",
