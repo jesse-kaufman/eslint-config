@@ -6,7 +6,7 @@
   "htmlWhitespaceSensitivity": "ignore",
   "proseWrap": "always",
   "sortPackageJson": true,
-  "ignorePatterns": ["CHANGELOG.md", "migrations/*"],
+  "ignorePatterns": ["CHANGELOG.md", "**/migrations/*"],
   "quoteProps": "as-needed",
   "singleAttributePerLine": false,
   "sortImports": {
