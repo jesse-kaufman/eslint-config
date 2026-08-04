@@ -262,6 +262,15 @@ const buildConfig = (workspaces = []) => [
     },
   },
 
+  // Vitest overrides
+  {
+    name: "app/javascript-config",
+    files: ["**/*.test.{js,ts}", "**/__tests__/**/*.{js.ts}"],
+    rules: {
+      "jsdoc/require-jsdoc": "off",
+    },
+  },
+
   // + TypeScript configuration
   // Uses vue-eslint-parser with TypeScript parser for <script> blocks
   {
