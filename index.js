@@ -80,6 +80,7 @@ const buildConfig = (workspaces = []) => [
       "unicorn/consistent-class-member-order": "off",
       "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
       "unicorn/no-return-array-push": "off",
+      "unicorn/iteration-fallback-style": ["warn", "fallback"],
       "unicorn/consistent-boolean-name": [
         "warn",
         {
@@ -99,7 +100,7 @@ const buildConfig = (workspaces = []) => [
           },
         },
       ],
-      "unicorn/prefer-minimal-ternary": "off",
+      "unicorn/prefer-minimal-ternary": "warn",
       "unicorn/default-export-style": ["warn", { functions: "separate" }],
       "unicorn/prefer-simple-condition-first": "warn",
 
