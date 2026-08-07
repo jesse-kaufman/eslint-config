@@ -1,8 +1,17 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["import", "unicorn", "typescript", "vue", "jsdoc", "promise", "vitest"],
-  "jsPlugins": ["@stylistic/eslint-plugin"],
-  "categories": {},
+  "plugins": ["import", "unicorn", "typescript", "vue", "jsdoc", "promise"],
+  "jsPlugins": [
+    "@stylistic/eslint-plugin",
+    {
+      "name": "jsdoc-js",
+      "specifier": "eslint-plugin-jsdoc"
+    }
+  ],
+  "categories": {
+    "correctness": "error",
+    "perf": "warn"
+  },
   "options": { "typeAware": true },
   "env": {
     "builtin": true,
@@ -23,11 +32,11 @@
     "constructor-super": "error",
     "for-direction": "error",
     "getter-return": "error",
+    "id-denylist": ["warn", "e"], // Disallow 'e' as variable name
 
     // ---------------------------------------
     // IMPORT RULES
     // ---------------------------------------
-
     "import/namespace": "error",
     "import/default": "error",
     "import/no-named-as-default": "warn",
@@ -85,6 +94,59 @@
     "jsdoc/require-throws-description": "off",
     "jsdoc/require-yields": "warn",
     "jsdoc/require-yields-description": "warn",
+    // JSDoc rules not yet natively implemented in oxlint
+    "jsdoc-js/informative-docs": "warn",
+    "jsdoc-js/require-hyphen-before-param-description": ["warn", "never"],
+    "jsdoc-js/require-description-complete-sentence": ["warn", { "abbreviations": ["e.g."] }],
+    "jsdoc-js/require-file-overview": [
+      "warn",
+      {
+        "tags": {
+          "file": {
+            "initialCommentsOnly": true,
+            "mustExist": true,
+            "preventDuplicates": true
+          }
+        }
+      }
+    ],
+    "jsdoc-js/require-jsdoc": [
+      "warn",
+      {
+        "publicOnly": false,
+        "require": {
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "ArrowFunctionExpression": false,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true
+        },
+        "checkConstructors": false,
+        "contexts": [
+          // Top-level function declarations
+          "FunctionDeclaration",
+
+          // Arrow and function expressions assigned to variables
+          "VariableDeclarator > ArrowFunctionExpression",
+          "VariableDeclarator > FunctionExpression",
+
+          // Exported functions and variables assigned to functions
+          "ExportNamedDeclaration > FunctionDeclaration",
+          "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+          "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+          "ExportDefaultDeclaration > FunctionDeclaration",
+          "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+          "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+
+          // Class stuff
+          "PropertyDefinition",
+          "MethodDefinition",
+          "ClassDeclaration",
+          "ClassExpression"
+        ]
+      }
+    ],
 
     // ---------------------------------------
     // BEST PRACTICES
@@ -376,7 +438,7 @@
     "unicorn/no-useless-switch-case": "error",
     "unicorn/no-useless-undefined": "error",
     "unicorn/no-zero-fractions": "error",
-    "unicorn/numeric-separators-style": ["error", { "number": { "fractionGroupLength": 3 } }],
+    "unicorn/numeric-separators-style": "error",
     "unicorn/prefer-add-event-listener": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat": "error",
@@ -653,9 +715,9 @@
         "vue/valid-define-options": "error",
         "vue/valid-define-props": "error",
         "vue/valid-next-tick": "error",
-        "vue/component-definition-name-casing": "warn",
+        "vue/component-definition-name-casing": ["error", "PascalCase"],
         "vue/require-default-prop": "warn",
-        "vue/require-prop-types": "warn",
+        "vue/require-prop-types": "error",
         "vue/no-multiple-slot-args": "warn",
         "vue/no-this-in-before-route-enter": ["error"],
         "vue/next-tick-style": ["warn", "promise"],
@@ -669,7 +731,8 @@
             "skipBlankLines": true,
             "skipComments": true
           }
-        ]
+        ],
+        "jsdoc-js/require-file-overview": "off"
       }
     },
 
@@ -707,7 +770,7 @@
     // ---------------------------------------
 
     {
-      "files": ["**/composables/*", "**/stores/*"],
+      "files": ["**/composables/*", "**/stores/*", "**/*Store.ts"],
       "rules": {
         "max-lines-per-function": "off",
         "max-statements": "off",
@@ -722,7 +785,9 @@
 
     {
       "files": ["**/*.test.{js,ts}", "**/__tests__/**"],
+      "plugins": ["vitest"],
       "rules": {
+        "jsdoc-js/require-jsdoc": "off",
         "max-lines-per-function": "off",
         "no-magic-numbers": "off",
         "jsdoc/require-param": "off",
@@ -760,8 +825,7 @@
         "vitest/valid-expect-in-promise": ["warn"],
         "vitest/require-hook": ["warn"],
         "unicorn/no-useless-undefined": "off"
-      },
-      "plugins": ["vitest"]
+      }
     },
 
     // ---------------------------------------
@@ -770,10 +834,10 @@
 
     {
       "files": ["**/__tests__/**/components/**/*.{js,ts}"],
+      "plugins": ["vitest"],
       "rules": {
         "vitest/prefer-describe-function-title": "off"
-      },
-      "plugins": ["vitest"]
+      }
     },
 
     // ---------------------------------------
@@ -783,20 +847,16 @@
     {
       "files": ["**/*.js"],
       "rules": {
+        "no-unused-vars": "error",
+
         "jsdoc/require-param-type": "warn",
         "jsdoc/require-property-type": "warn",
         "jsdoc/require-throws-type": "warn",
         "jsdoc/require-yields-type": "warn",
-        "no-unused-vars": "error",
-        "import/extensions": [
-          "warn",
-          "ignorePackages",
-          {
-            "js": "always",
-            "ts": "never",
-            "vue": "always"
-          }
-        ]
+        // JSDoc rules not yet natively implemented in oxlint
+        "jsdoc-js/prefer-import-tag": ["warn", { "enableFixer": false }],
+        "jsdoc-js/check-types": "warn",
+        "jsdoc-js/check-values": "warn"
       }
     },
 
