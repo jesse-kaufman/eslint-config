@@ -12,8 +12,6 @@ const vueRules = {
   // ============================================
   // Inherit shared TypeScript rules to avoid duplication
   ...sharedTypeScriptRules,
-  // Disable @file JSDoc overview
-  "jsdoc/require-file-overview": "off",
 
   // ============================================
   // Template Safety
