@@ -83,6 +83,7 @@ const buildConfig = (workspaces = []) => [
       "unicorn/consistent-boolean-name": [
         "warn",
         {
+          checkMethods: "always",
           prefixes: {
             required: true,
             nullable: true,
