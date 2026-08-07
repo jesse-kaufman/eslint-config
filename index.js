@@ -3,7 +3,6 @@
 import path from "node:path"
 import js from "@eslint/js"
 import * as importX from "eslint-plugin-import-x"
-import jsdocPlugin from "eslint-plugin-jsdoc"
 import oxlint from "eslint-plugin-oxlint"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
 import vue from "eslint-plugin-vue"
@@ -38,7 +37,6 @@ const buildConfig = (workspaces = []) => [
   // ------------------------------------------------------
   {
     plugins: {
-      jsdoc: jsdocPlugin,
       unicorn: eslintPluginUnicorn,
       "import-x": importX,
       "@typescript-eslint": tsPlugin,
@@ -103,22 +101,26 @@ const buildConfig = (workspaces = []) => [
       "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
       "unicorn/default-export-style": ["warn", { functions: "separate" }],
       "unicorn/prefer-simple-condition-first": "warn",
-
-      // ============================================
-      // Code Quality & Best Practices
-      // ============================================
-      "require-atomic-updates": "warn",
+      "unicorn/single-line-block-comment-style": ["warn", "single-line"],
+      "import-x/extensions": [
+        "warn",
+        "ignorePackages",
+        {
+          js: "never",
+          ts: "never",
+          vue: "always",
+        },
+      ],
 
       // ============================================
       // Naming Conventions
       // ============================================
       "unicorn/name-replacements": "off", // Disable for now
-      "id-denylist": ["warn", "e"], // Disallow 'e' as variable name
 
       // ============================================
       // Import Plugin Rules
       // ============================================
-      "import-x/no-useless-path-segments": "warn",
+      //"import-x/no-useless-path-segments": "warn",
 
       // ============================================
       // Unicorn Plugin Rules
@@ -138,76 +140,6 @@ const buildConfig = (workspaces = []) => [
       "unicorn/better-regex": "warn", // Deprecated
       "unicorn/no-unused-properties": "warn",
       "unicorn/prefer-json-parse-buffer": "warn",
-    },
-  },
-
-  // ------------------------------------------------------
-  // 3. JSDoc configuration (applies to JS/TS/Vue files)
-  // ------------------------------------------------------
-  {
-    name: "app/jsdoc-config",
-    files: ["**/*.{js,ts,vue}"],
-    rules: {
-      // ============================================
-      // JSDoc Rules
-      // ============================================
-      "jsdoc/require-file-overview": [
-        "warn",
-        {
-          tags: {
-            file: {
-              initialCommentsOnly: true,
-              mustExist: true,
-              preventDuplicates: true,
-            },
-          },
-        },
-      ],
-      "jsdoc/informative-docs": "warn",
-      "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
-      "jsdoc/require-description-complete-sentence": [
-        "warn",
-        {
-          abbreviations: ["e.g."],
-        },
-      ],
-      "jsdoc/require-jsdoc": [
-        "warn",
-        {
-          publicOnly: false,
-          require: {
-            FunctionDeclaration: true,
-            FunctionExpression: true,
-            ArrowFunctionExpression: false,
-            MethodDefinition: true,
-            ClassDeclaration: true,
-            ClassExpression: true,
-          },
-          checkConstructors: false,
-          contexts: [
-            // Top-level function declarations
-            "FunctionDeclaration",
-
-            // Arrow and function expressions assigned to variables
-            "VariableDeclarator > ArrowFunctionExpression",
-            "VariableDeclarator > FunctionExpression",
-
-            // Exported functions and variables assigned to functions
-            "ExportNamedDeclaration > FunctionDeclaration",
-            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
-            "ExportDefaultDeclaration > FunctionDeclaration",
-            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
-
-            // Class stuff
-            "PropertyDefinition",
-            "MethodDefinition",
-            "ClassDeclaration",
-            "ClassExpression",
-          ],
-        },
-      ],
     },
   },
 
@@ -245,11 +177,6 @@ const buildConfig = (workspaces = []) => [
     files: ["*.js", "**/*.js"],
     rules: {
       ...js.configs.recommended.rules, // Core JavaScript rules
-
-      "jsdoc/prefer-import-tag": ["warn", { enableFixer: false }],
-      "jsdoc/check-types": "warn",
-      "jsdoc/check-values": "warn",
-      "jsdoc/tag-lines": "off",
       "no-unused-vars": "warn",
 
       // Require .js extensions for ESM imports in JavaScript files
@@ -262,15 +189,6 @@ const buildConfig = (workspaces = []) => [
           vue: "always",
         },
       ],
-    },
-  },
-
-  // Vitest overrides
-  {
-    name: "app/javascript-config",
-    files: ["**/*.test.{js,ts}", "**/__tests__/**/*.{js.ts}"],
-    rules: {
-      "jsdoc/require-jsdoc": "off",
     },
   },
 
