@@ -101,6 +101,7 @@ const buildConfig = (workspaces = []) => [
       ],
       "unicorn/prefer-minimal-ternary": "off",
       "unicorn/default-export-style": ["warn", { functions: "separate" }],
+      "unicorn/prefer-simple-condition-first": "warn",
 
       // ============================================
       // Code Quality & Best Practices
