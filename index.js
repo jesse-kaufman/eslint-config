@@ -100,7 +100,7 @@ const buildConfig = (workspaces = []) => [
           },
         },
       ],
-      "unicorn/prefer-minimal-ternary": "warn",
+      "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
       "unicorn/default-export-style": ["warn", { functions: "separate" }],
       "unicorn/prefer-simple-condition-first": "warn",
 
