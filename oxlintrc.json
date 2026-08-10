@@ -6,6 +6,10 @@
     {
       "name": "jsdoc-js",
       "specifier": "eslint-plugin-jsdoc"
+    },
+    {
+      "name": "unicorn-js",
+      "specifier": "eslint-plugin-unicorn"
     }
   ],
   "categories": {
@@ -94,7 +98,7 @@
     "jsdoc/require-throws-description": "off",
     "jsdoc/require-yields": "warn",
     "jsdoc/require-yields-description": "warn",
-    // JSDoc rules not yet natively implemented in oxlint
+    // JSDoc rules not yet in oxlint
     "jsdoc-js/informative-docs": "warn",
     "jsdoc-js/require-hyphen-before-param-description": ["warn", "never"],
     "jsdoc-js/require-description-complete-sentence": ["warn", { "abbreviations": ["e.g."] }],
@@ -296,18 +300,8 @@
     "no-var": "error",
     "sort-vars": "error",
     "vars-on-top": "error",
-    // "capitalized-comments": [
-    //   "warn",
-    //   "always",
-    //   {
-    //     "ignoreConsecutiveComments": true,
-    //     "ignoreInlineComments": true,
-    //     "ignorePattern": "prettier"
-    //   }
-    // ],
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "expression"],
-
     "max-lines": [
       "warn",
       {
@@ -334,9 +328,7 @@
         "avoidExplicitReturnArrows": false
       }
     ],
-
     "require-await": "error",
-
     "operator-assignment": ["error", "always"],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
@@ -515,7 +507,41 @@
     "unicorn/switch-case-braces": ["error", "avoid"],
     "unicorn/explicit-length-check": "off",
     "unicorn/custom-error-definition": "error",
-    "unicorn/prefer-import-meta-properties": "error"
+    "unicorn/prefer-import-meta-properties": "error",
+    // Unicorn rules not yet natively supported by oxlint
+    "unicorn-js/no-incorrect-template-string-interpolation": ["warn"],
+    "unicorn-js/prefer-short-arrow-method": "warn",
+    "unicorn-js/consistent-class-member-order": "off",
+    "unicorn-js/prefer-switch": ["warn", { "minimumCases": 5 }],
+    "unicorn-js/no-return-array-push": "off",
+    "unicorn-js/iteration-fallback-style": ["warn", "fallback"],
+    "unicorn-js/consistent-boolean-name": [
+      "warn",
+      {
+        "checkMethods": "always",
+        "prefixes": {
+          "required": true,
+          "nullable": true,
+          "show": true,
+          "hide": true,
+          "include": true,
+          "use": true,
+          "matches": true,
+          "allow": true,
+          "prevent": true,
+          "enable": true,
+          "disable": true
+        }
+      }
+    ],
+    "unicorn-js/prefer-minimal-ternary": ["warn", { "checkVaryingBase": true }],
+    "unicorn-js/default-export-style": ["warn", { "functions": "separate" }],
+    "unicorn-js/prefer-simple-condition-first": "warn",
+    "unicorn-js/single-line-block-comment-style": ["warn", "single-line"],
+    "unicorn-js/consistent-destructuring": "warn",
+    "unicorn-js/better-regex": "warn", // Deprecated
+    "unicorn-js/no-unused-properties": "warn",
+    "unicorn-js/prefer-json-parse-buffer": "warn"
   },
 
   "overrides": [

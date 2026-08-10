@@ -71,37 +71,37 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // Code Style & Formatting
       // ============================================
-      "unicorn/no-incorrect-template-string-interpolation": ["warn"],
-      "unicorn/comment-content": "off", // Enable this later
-      "unicorn/no-unreadable-new-expression": "off",
-      "unicorn/prefer-short-arrow-method": "warn",
-      "unicorn/consistent-class-member-order": "off",
-      "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
-      "unicorn/no-return-array-push": "off",
-      "unicorn/iteration-fallback-style": ["warn", "fallback"],
-      "unicorn/consistent-boolean-name": [
-        "warn",
-        {
-          checkMethods: "always",
-          prefixes: {
-            required: true,
-            nullable: true,
-            show: true,
-            hide: true,
-            include: true,
-            use: true,
-            matches: true,
-            allow: true,
-            prevent: true,
-            enable: true,
-            disable: true,
-          },
-        },
-      ],
-      "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
-      "unicorn/default-export-style": ["warn", { functions: "separate" }],
-      "unicorn/prefer-simple-condition-first": "warn",
-      "unicorn/single-line-block-comment-style": ["warn", "single-line"],
+      // "unicorn/no-incorrect-template-string-interpolation": ["warn"],
+      // "unicorn/comment-content": "off", // Enable this later
+      // "unicorn/no-unreadable-new-expression": "off",
+      // "unicorn/prefer-short-arrow-method": "warn",
+      // "unicorn/consistent-class-member-order": "off",
+      // "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
+      // "unicorn/no-return-array-push": "off",
+      // "unicorn/iteration-fallback-style": ["warn", "fallback"],
+      // "unicorn/consistent-boolean-name": [
+      //   "warn",
+      //   {
+      //     checkMethods: "always",
+      //     prefixes: {
+      //       required: true,
+      //       nullable: true,
+      //       show: true,
+      //       hide: true,
+      //       include: true,
+      //       use: true,
+      //       matches: true,
+      //       allow: true,
+      //       prevent: true,
+      //       enable: true,
+      //       disable: true,
+      //     },
+      //   },
+      // ],
+      // "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
+      // "unicorn/default-export-style": ["warn", { functions: "separate" }],
+      // "unicorn/prefer-simple-condition-first": "warn",
+      // "unicorn/single-line-block-comment-style": ["warn", "single-line"],
       "import-x/extensions": [
         "warn",
         "ignorePackages",
@@ -125,21 +125,77 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // Unicorn Plugin Rules
       // ============================================
-      "unicorn/prevent-abbreviations": "off",
-      "unicorn/filename-case": [
-        "warn",
-        {
-          cases: {
-            camelCase: true,
-            pascalCase: true,
-          },
-          checkDirectories: false,
-        },
-      ],
-      "unicorn/consistent-destructuring": "warn",
-      "unicorn/better-regex": "warn", // Deprecated
-      "unicorn/no-unused-properties": "warn",
-      "unicorn/prefer-json-parse-buffer": "warn",
+      // "unicorn/prevent-abbreviations": "off",
+      // "unicorn/filename-case": [
+      //   "warn",
+      //   {
+      //     cases: {
+      //       camelCase: true,
+      //       pascalCase: true,
+      //     },
+      //     checkDirectories: false,
+      //   },
+      // ],
+      // "unicorn/consistent-destructuring": "warn",
+      // "unicorn/better-regex": "warn", // Deprecated
+      // "unicorn/no-unused-properties": "warn",
+      // "unicorn/prefer-json-parse-buffer": "warn",
+
+      // ============================================
+      // JSDoc rules not yet in oxlint
+      // ============================================
+      // "jsdoc/informative-docs": "warn",
+      // "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
+      // "jsdoc/require-description-complete-sentence": ["warn", { abbreviations: ["e.g."] }],
+      // "jsdoc/require-file-overview": [
+      //   "warn",
+      //   {
+      //     tags: {
+      //       file: {
+      //         initialCommentsOnly: true,
+      //         mustExist: true,
+      //         preventDuplicates: true,
+      //       },
+      //     },
+      //   },
+      // ],
+      // "jsdoc/require-jsdoc": [
+      //   "warn",
+      //   {
+      //     publicOnly: false,
+      //     require: {
+      //       FunctionDeclaration: true,
+      //       FunctionExpression: true,
+      //       ArrowFunctionExpression: false,
+      //       MethodDefinition: true,
+      //       ClassDeclaration: true,
+      //       ClassExpression: true,
+      //     },
+      //     checkConstructors: false,
+      //     contexts: [
+      //       // Top-level function declarations
+      //       "FunctionDeclaration",
+
+      //       // Arrow and function expressions assigned to variables
+      //       "VariableDeclarator > ArrowFunctionExpression",
+      //       "VariableDeclarator > FunctionExpression",
+
+      //       // Exported functions and variables assigned to functions
+      //       "ExportNamedDeclaration > FunctionDeclaration",
+      //       "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+      //       "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+      //       "ExportDefaultDeclaration > FunctionDeclaration",
+      //       "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+      //       "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+
+      //       // Class stuff
+      //       "PropertyDefinition",
+      //       "MethodDefinition",
+      //       "ClassDeclaration",
+      //       "ClassExpression",
+      //     ],
+      //   },
+      // ],
     },
   },
 
