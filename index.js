@@ -250,6 +250,7 @@ const buildConfig = (workspaces = []) => [
 
   // + TypeScript configuration
   // Uses vue-eslint-parser with TypeScript parser for <script> blocks
+  ...vue.configs["flat/recommended"],
   {
     name: "app/vue-typescript-config",
     files: ["**/*.vue"],
@@ -264,7 +265,6 @@ const buildConfig = (workspaces = []) => [
         tsconfigRootDir: projectRoot,
       },
     },
-    plugins: { vue },
     rules: vueRules,
   },
 

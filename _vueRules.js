@@ -1,12 +1,8 @@
 /** @file Vue-specific ESLint configuration with TypeScript support. */
 
-import vue from "eslint-plugin-vue"
 import sharedTypeScriptRules from "./_typescriptRules.js"
 
 const vueRules = {
-  // Recommended configurations (must come before custom config)
-  ...vue.configs["flat/recommended"].rules,
-
   // ============================================
   // TypeScript
   // ============================================
