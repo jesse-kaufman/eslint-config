@@ -70,6 +70,7 @@ const vueRules = {
   "vue/prefer-prop-type-boolean-first": ["warn"],
   "vue/custom-event-name-casing": ["warn", "camelCase"],
   "vue/prefer-true-attribute-shorthand": ["warn"],
+  "vue/no-required-prop-with-default": "off",
 
   // ============================================
   // Template Formatting
