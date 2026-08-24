@@ -62,7 +62,7 @@ const buildConfig = (workspaces = []) => [
   // Base configuration for all JavaScript/TypeScript/Vue.js files
   {
     name: "app/base-config",
-    files: ["**/*.{js,vue,ts}"],
+    files: ["**/*.{vue}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
