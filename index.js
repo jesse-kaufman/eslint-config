@@ -62,7 +62,7 @@ const buildConfig = (workspaces = []) => [
   // Base configuration for all JavaScript/TypeScript/Vue.js files
   {
     name: "app/base-config",
-    files: ["**/*.{vue}"],
+    files: ["**/*.{js,vue,ts}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -72,37 +72,37 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // Code Style & Formatting
       // ============================================
-      "unicorn/no-incorrect-template-string-interpolation": ["warn"],
-      "unicorn/comment-content": "off", // Enable this later
-      "unicorn/no-unreadable-new-expression": "off",
-      "unicorn/prefer-short-arrow-method": "warn",
-      "unicorn/consistent-class-member-order": "off",
-      "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
-      "unicorn/no-return-array-push": "off",
-      "unicorn/iteration-fallback-style": ["warn", "fallback"],
-      "unicorn/consistent-boolean-name": [
-        "warn",
-        {
-          checkMethods: "always",
-          prefixes: {
-            required: true,
-            nullable: true,
-            show: true,
-            hide: true,
-            include: true,
-            use: true,
-            matches: true,
-            allow: true,
-            prevent: true,
-            enable: true,
-            disable: true,
-          },
-        },
-      ],
-      "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
-      "unicorn/default-export-style": ["warn", { functions: "separate" }],
-      "unicorn/prefer-simple-condition-first": "warn",
-      "unicorn/single-line-block-comment-style": ["warn", "single-line"],
+      // "unicorn/no-incorrect-template-string-interpolation": ["warn"],
+      // "unicorn/comment-content": "off", // Enable this later
+      // "unicorn/no-unreadable-new-expression": "off",
+      // "unicorn/prefer-short-arrow-method": "warn",
+      // "unicorn/consistent-class-member-order": "off",
+      // "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
+      // "unicorn/no-return-array-push": "off",
+      // "unicorn/iteration-fallback-style": ["warn", "fallback"],
+      // "unicorn/consistent-boolean-name": [
+      //   "warn",
+      //   {
+      //     checkMethods: "always",
+      //     prefixes: {
+      //       required: true,
+      //       nullable: true,
+      //       show: true,
+      //       hide: true,
+      //       include: true,
+      //       use: true,
+      //       matches: true,
+      //       allow: true,
+      //       prevent: true,
+      //       enable: true,
+      //       disable: true,
+      //     },
+      //   },
+      // ],
+      // "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
+      // "unicorn/default-export-style": ["warn", { functions: "separate" }],
+      // "unicorn/prefer-simple-condition-first": "warn",
+      // "unicorn/single-line-block-comment-style": ["warn", "single-line"],
       "import-x/extensions": [
         "warn",
         "ignorePackages",
