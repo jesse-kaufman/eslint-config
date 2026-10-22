@@ -145,58 +145,58 @@ const buildConfig = (workspaces = []) => [
       // ============================================
       // JSDoc rules not yet in oxlint
       // ============================================
-      "jsdoc/informative-docs": "warn",
-      "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
-      "jsdoc/require-description-complete-sentence": ["warn", { abbreviations: ["e.g."] }],
-      "jsdoc/require-file-overview": [
-        "warn",
-        {
-          tags: {
-            file: {
-              initialCommentsOnly: true,
-              mustExist: true,
-              preventDuplicates: true,
-            },
-          },
-        },
-      ],
-      "jsdoc/require-jsdoc": [
-        "warn",
-        {
-          publicOnly: false,
-          require: {
-            FunctionDeclaration: true,
-            FunctionExpression: true,
-            ArrowFunctionExpression: false,
-            MethodDefinition: true,
-            ClassDeclaration: true,
-            ClassExpression: true,
-          },
-          checkConstructors: false,
-          contexts: [
-            // Top-level function declarations
-            "FunctionDeclaration",
+      // "jsdoc/informative-docs": "warn",
+      // "jsdoc/require-hyphen-before-param-description": ["warn", "never"],
+      // "jsdoc/require-description-complete-sentence": ["warn", { abbreviations: ["e.g."] }],
+      // "jsdoc/require-file-overview": [
+      //   "warn",
+      //   {
+      //     tags: {
+      //       file: {
+      //         initialCommentsOnly: true,
+      //         mustExist: true,
+      //         preventDuplicates: true,
+      //       },
+      //     },
+      //   },
+      // ],
+      // "jsdoc/require-jsdoc": [
+      //   "warn",
+      //   {
+      //     publicOnly: false,
+      //     require: {
+      //       FunctionDeclaration: true,
+      //       FunctionExpression: true,
+      //       ArrowFunctionExpression: false,
+      //       MethodDefinition: true,
+      //       ClassDeclaration: true,
+      //       ClassExpression: true,
+      //     },
+      //     checkConstructors: false,
+      //     contexts: [
+      //       // Top-level function declarations
+      //       "FunctionDeclaration",
 
-            // Arrow and function expressions assigned to variables
-            "VariableDeclarator > ArrowFunctionExpression",
-            "VariableDeclarator > FunctionExpression",
+      //       // Arrow and function expressions assigned to variables
+      //       "VariableDeclarator > ArrowFunctionExpression",
+      //       "VariableDeclarator > FunctionExpression",
 
-            // Exported functions and variables assigned to functions
-            "ExportNamedDeclaration > FunctionDeclaration",
-            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-            "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
-            "ExportDefaultDeclaration > FunctionDeclaration",
-            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
-            "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+      //       // Exported functions and variables assigned to functions
+      //       "ExportNamedDeclaration > FunctionDeclaration",
+      //       "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+      //       "ExportNamedDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
+      //       "ExportDefaultDeclaration > FunctionDeclaration",
+      //       "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > ArrowFunctionExpression",
+      //       "ExportDefaultDeclaration > VariableDeclaration > VariableDeclarator > FunctionExpression",
 
-            // Class stuff
-            "PropertyDefinition",
-            "MethodDefinition",
-            "ClassDeclaration",
-            "ClassExpression",
-          ],
-        },
-      ],
+      //       // Class stuff
+      //       "PropertyDefinition",
+      //       "MethodDefinition",
+      //       "ClassDeclaration",
+      //       "ClassExpression",
+      //     ],
+      //   },
+      // ],
     },
   },
 
