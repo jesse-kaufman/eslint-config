@@ -70,77 +70,9 @@ const buildConfig = (workspaces = []) => [
     },
     rules: {
       // ============================================
-      // Code Style & Formatting
-      // ============================================
-      "unicorn/no-incorrect-template-string-interpolation": ["warn"],
-      "unicorn/comment-content": "off", // Enable this later
-      "unicorn/no-unreadable-new-expression": "off",
-      "unicorn/prefer-short-arrow-method": "warn",
-      "unicorn/consistent-class-member-order": "off",
-      "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
-      "unicorn/no-return-array-push": "off",
-      "unicorn/iteration-fallback-style": ["warn", "fallback"],
-      "unicorn/consistent-boolean-name": [
-        "warn",
-        {
-          checkMethods: "always",
-          prefixes: {
-            required: true,
-            nullable: true,
-            show: true,
-            hide: true,
-            include: true,
-            use: true,
-            matches: true,
-            allow: true,
-            prevent: true,
-            enable: true,
-            disable: true,
-          },
-        },
-      ],
-      "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: true }],
-      "unicorn/default-export-style": ["warn", { functions: "separate" }],
-      "unicorn/prefer-simple-condition-first": "warn",
-      "unicorn/single-line-block-comment-style": ["warn", "single-line"],
-      "import-x/extensions": [
-        "warn",
-        "ignorePackages",
-        {
-          js: "never",
-          ts: "never",
-          vue: "always",
-        },
-      ],
-
-      // ============================================
-      // Naming Conventions
-      // ============================================
-      "unicorn/name-replacements": "off", // Disable for now
-
-      // ============================================
       // Import Plugin Rules
       // ============================================
       "import-x/no-useless-path-segments": "warn",
-
-      // ============================================
-      // Unicorn Plugin Rules
-      // ============================================
-      "unicorn/prevent-abbreviations": "off",
-      "unicorn/filename-case": [
-        "warn",
-        {
-          cases: {
-            camelCase: true,
-            pascalCase: true,
-          },
-          checkDirectories: false,
-        },
-      ],
-      "unicorn/consistent-destructuring": "warn",
-      "unicorn/better-regex": "warn", // Deprecated
-      "unicorn/no-unused-properties": "warn",
-      "unicorn/prefer-json-parse-buffer": "warn",
 
       // ============================================
       // JSDoc rules not yet in oxlint
