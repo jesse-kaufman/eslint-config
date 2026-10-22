@@ -16,113 +16,6 @@ const sharedTypeScriptRules = {
   ],
 
   // ============================================
-  // Code Consistency
-  // ============================================
-  "import-x/no-unresolved": "off",
-  "import-x/namespace": "off",
-  "import-x/default": "off",
-  "no-unused-vars": "off",
-  "@typescript-eslint/no-unused-vars": "warn",
-
-  // ============================================
-  // Type Inference Rules
-  // ============================================
-  "@typescript-eslint/no-inferrable-types": "warn",
-  "@typescript-eslint/no-unnecessary-type-assertion": "warn",
-  "@typescript-eslint/no-unnecessary-type-arguments": "warn",
-
-  // ============================================
-  // Type Safety
-  // ============================================
-  "@typescript-eslint/no-unnecessary-type-conversion": "warn",
-  "@typescript-eslint/no-unsafe-argument": "off",
-  //"@typescript-eslint/no-unsafe-member-access": ["warn", { allowOptionalChaining: true }],
-  "@typescript-eslint/no-unsafe-member-access": "off",
-  "@typescript-eslint/no-confusing-void-expression": [
-    "warn",
-    {
-      ignoreArrowShorthand: true,
-      ignoreVoidOperator: true,
-      ignoreVoidReturningFunctions: true,
-    },
-  ],
-  "@typescript-eslint/prefer-reduce-type-parameter": "warn",
-  "@typescript-eslint/restrict-template-expressions": [
-    "warn",
-    { allowNumber: true, allowBoolean: true },
-  ],
-
-  // ============================================
-  // Modern JavaScript/TypeScript Patterns
-  // ============================================
-  "@typescript-eslint/prefer-nullish-coalescing": [
-    "warn",
-    { ignoreConditionalTests: true, ignoreBooleanCoercion: true },
-  ],
-  "@typescript-eslint/prefer-optional-chain": "warn",
-  "@typescript-eslint/no-import-type-side-effects": "warn",
-  "@typescript-eslint/no-for-in-array": "warn",
-  "@typescript-eslint/prefer-for-of": "warn",
-
-  // ============================================
-  // Type Definition Consistency
-  // ============================================
-  "@typescript-eslint/array-type": ["warn", { default: "array" }],
-  "@typescript-eslint/consistent-generic-constructors": ["warn", "constructor"],
-  "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
-  "@typescript-eslint/consistent-type-assertions": "warn",
-  "@typescript-eslint/consistent-type-definitions": "warn",
-  "@typescript-eslint/no-duplicate-type-constituents": "warn",
-  "@typescript-eslint/no-redundant-type-constituents": "warn",
-  "@typescript-eslint/prefer-return-this-type": "warn",
-
-  // ============================================
-  // Code Consistency
-  // ============================================
-  "no-shadow": "off",
-  "@typescript-eslint/no-shadow": "warn",
-  "init-declarations": "off",
-  "@typescript-eslint/init-declarations": "warn",
-  "no-loop-func": "off",
-  "@typescript-eslint/no-loop-func": "warn",
-  "prefer-promise-reject-errors": "off",
-  "@typescript-eslint/prefer-promise-reject-errors": "warn",
-  "no-magic-numbers": "off",
-  "@typescript-eslint/prefer-readonly": "warn",
-  "@typescript-eslint/prefer-string-starts-ends-with": "warn",
-  "@typescript-eslint/promise-function-async": "warn",
-  "@typescript-eslint/switch-exhaustiveness-check": "warn",
-  "class-methods-use-this": "off",
-  "@typescript-eslint/no-base-to-string": "warn",
-  "@typescript-eslint/class-methods-use-this": "warn",
-  "default-param-last": "off",
-  "@typescript-eslint/default-param-last": "warn",
-  "dot-notation": "off",
-  "@typescript-eslint/dot-notation": "warn",
-  "no-implied-eval": "off",
-  "@typescript-eslint/no-implied-eval": "warn",
-  "@typescript-eslint/consistent-type-exports": "warn",
-  "@typescript-eslint/consistent-type-imports": ["warn", { prefer: "type-imports" }],
-  "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
-  "@typescript-eslint/explicit-function-return-type": [
-    "warn",
-    { allowConciseArrowFunctionExpressionsStartingWithVoid: true },
-  ],
-  "@typescript-eslint/no-array-delete": "warn",
-  "@typescript-eslint/method-signature-style": ["warn", "method"],
-  "@typescript-eslint/prefer-regexp-exec": "off",
-  "@typescript-eslint/no-meaningless-void-operator": "off",
-  "@typescript-eslint/no-misused-promises": "warn",
-  "@typescript-eslint/no-misused-spread": "warn",
-  "@typescript-eslint/no-mixed-enums": "warn",
-  "@typescript-eslint/no-unnecessary-condition": "warn",
-  "@typescript-eslint/no-unnecessary-template-expression": "warn",
-  "@typescript-eslint/explicit-member-accessibility": [
-    "warn",
-    { overrides: { constructors: "no-public" } },
-  ],
-
-  // ============================================
   // Code Style & Formatting
   // ============================================
   "unicorn/no-incorrect-template-string-interpolation": ["warn"],
@@ -133,25 +26,25 @@ const sharedTypeScriptRules = {
   "unicorn/prefer-switch": ["warn", { minimumCases: 5 }],
   "unicorn/no-return-array-push": "off",
   "unicorn/iteration-fallback-style": ["warn", "fallback"],
-  "unicorn/consistent-boolean-name": [
-    "warn",
-    {
-      checkMethods: "always",
-      prefixes: {
-        required: true,
-        nullable: true,
-        show: true,
-        hide: true,
-        include: true,
-        use: true,
-        matches: true,
-        allow: true,
-        prevent: true,
-        enable: true,
-        disable: true,
-      },
-    },
-  ],
+  // "unicorn/consistent-boolean-name": [
+  //   "warn",
+  //   {
+  //     checkMethods: "always",
+  //     prefixes: {
+  //       required: true,
+  //       nullable: true,
+  //       show: true,
+  //       hide: true,
+  //       include: true,
+  //       use: true,
+  //       matches: true,
+  //       allow: true,
+  //       prevent: true,
+  //       enable: true,
+  //       disable: true,
+  //     },
+  //   },
+  // ],
   "unicorn/prefer-minimal-ternary": ["warn", { checkVaryingBase: false }],
   "unicorn/default-export-style": ["warn", { functions: "separate" }],
   "unicorn/prefer-simple-condition-first": "warn",

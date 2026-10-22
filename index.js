@@ -88,6 +88,7 @@ const buildConfig = (workspaces = []) => [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
+        //project: "./tsconfig.json",
         ecmaVersion: "latest",
         sourceType: "module",
         tsconfigRootDir: projectRoot,
@@ -137,10 +138,13 @@ const buildConfig = (workspaces = []) => [
         parser: tseslint.parser,
         ecmaVersion: "latest",
         sourceType: "module",
-        projectService: "./frontend/tsconfig.json",
+        project: "./tsconfig.json",
         extraFileExtensions: [".vue"],
         tsconfigRootDir: projectRoot,
       },
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
     },
     rules: vueRules,
   },
