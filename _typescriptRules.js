@@ -18,7 +18,7 @@ const sharedTypeScriptRules = {
   // ============================================
   // Code Style & Formatting
   // ============================================
-  "unicorn/no-incorrect-template-string-interpolation": ["warn"],
+  //  "unicorn/no-incorrect-template-string-interpolation": ["warn"],
   "unicorn/comment-content": "off", // Enable this later
   "unicorn/no-unreadable-new-expression": "off",
   "unicorn/prefer-short-arrow-method": "warn",
