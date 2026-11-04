@@ -57,6 +57,7 @@ const buildConfig = (workspaces = []) => [
       "**/coverage/**",
       "**/migrations/**",
       "**/src/api/schema.ts",
+      "**/*.gen/**",
     ],
   },
   // Base configuration for all JavaScript/TypeScript/Vue.js files
