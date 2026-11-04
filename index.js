@@ -159,7 +159,7 @@ const buildConfig = (workspaces = []) => [
   // ============================================
   {
     name: "app/eslint-config",
-    files: ["eslint-config/*", ".eslint-config/*"],
+    files: ["eslint-config/*", ".eslint-config/*", "*.config.{js,ts}"],
     rules: {
       "unicorn/filename-case": "off",
     },
