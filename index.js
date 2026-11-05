@@ -74,6 +74,7 @@ const buildConfig = (workspaces = []) => [
       // Import Plugin Rules
       // ============================================
       "import-x/no-useless-path-segments": "warn",
+      "import-x/extensions": ["warn", "never", { vue: "always" }],
     },
   },
 

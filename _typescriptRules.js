@@ -49,15 +49,6 @@ const sharedTypeScriptRules = {
   "unicorn/default-export-style": ["warn", { functions: "separate" }],
   "unicorn/prefer-simple-condition-first": "warn",
   "unicorn/single-line-block-comment-style": ["warn", "single-line"],
-  "import-x/extensions": [
-    "warn",
-    "ignorePackages",
-    {
-      js: "never",
-      ts: "never",
-      vue: "always",
-    },
-  ],
 
   // ============================================
   // Naming Conventions
